@@ -1,5 +1,6 @@
 import Links from '@/components/links'
-import AboutMe from '@/components/sections/AboutMe'
+import Experience from '@/components/sections/experience'
+import Skills from '@/components/sections/skills'
 
 export default function Home() {
   return (
@@ -12,13 +13,16 @@ export default function Home() {
       <div className="pixel-border bg-secondary-background p-6 mb-6">
         <div className="text-xs sm:text-sm leading-relaxed space-y-4">
           <p>HEY! I&apos;M AARON GILL, A SOFTWARE ENGINEER BASED IN SYDNEY, AUSTRALIA.</p>
-          <p>THIS IS MY LITTLE PORTFOLIO SITE.</p>
+          <p>THIS IS MY PORTFOLIO SITE.</p>
         </div>
         <Links />
       </div>
 
       <div className="mt-8">
-        <AboutMe/>
+        <Skills />
+      </div>
+      <div className='pixel-border bg-secondary-background p-6 mb-6'>
+        <Experience />
       </div>
     </div>
   )

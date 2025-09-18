@@ -4,34 +4,36 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #1e1a3a;
-  --secondary-background: #2a2550;
-  --foreground: #ffffff;
+  --background: #f8f9ff;
+  --secondary-background: #ffffff;
+  --foreground: #1a1a2e;
   --main-foreground: #000000;
   --main: #ffd700;
   --accent: #ff6b35;
-  --border: #000000;
+  --border: #2d2d44;
   --ring: #ffd700;
-  --overlay: rgba(0, 0, 0, 0.8);
+  --overlay: rgba(255, 255, 255, 0.9);
   --shadow: 2px 2px 0px 0px var(--border);
-  --pixel-blue: #4a90e2;
-  --pixel-green: #7ed321;
-  --pixel-red: #d0021b;
+  --pixel-blue: #3b7dd8;
+  --pixel-green: #66bb6a;
+  --pixel-red: #e53e3e;
+  --grid-color: rgba(45, 45, 68, 0.1);
 }
 
 .dark {
-  --background: #0f0d1a;
-  --secondary-background: #1a1730;
-  --foreground: #ffffff;
+  --background: #0a0a0f;
+  --secondary-background: #16141d;
+  --foreground: #c7c5d1;
   --main-foreground: #000000;
-  --main: #ffd700;
-  --accent: #ff6b35;
-  --border: #333333;
-  --ring: #ffd700;
+  --main: #b8860b;
+  --accent: #8b2635;
+  --border: #2a1f2d;
+  --ring: #b8860b;
   --shadow: 2px 2px 0px 0px var(--border);
-  --pixel-blue: #5ba3f5;
-  --pixel-green: #8ee63f;
-  --pixel-red: #e8334a;
+  --pixel-blue: #4c5f7a;
+  --pixel-green: #5a6b4c;
+  --pixel-red: #7a4c4c;
+  --grid-color: rgba(42, 31, 45, 0.3);
 }
 
 @theme inline {
@@ -60,6 +62,10 @@
 
 body {
   background-color: var(--background);
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 20px 20px;
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;

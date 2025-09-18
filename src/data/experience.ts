@@ -7,7 +7,7 @@ const PAST_ROLES: {
 }[] = [
   {
     company: 'ACME Solutions',
-    role: 'CEO',
+    role: 'CEO hehe',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vel hic aspernatur molestiae exercitationem rerum reiciendis mollitia magnam harum ipsum?',
     startDate: 'March 2023',
