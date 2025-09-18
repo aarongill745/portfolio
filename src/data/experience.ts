@@ -6,23 +6,23 @@ const PAST_ROLES: {
   endDate: string
 }[] = [
   {
-    company: 'ACME Solutions',
-    role: 'CEO hehe',
+    company: 'Commonwealth Bank of Australia',
+    role: 'Software Engineer',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vel hic aspernatur molestiae exercitationem rerum reiciendis mollitia magnam harum ipsum?',
-    startDate: 'March 2023',
+      'Some stuff',
+    startDate: 'Aug 2025',
     endDate: 'Now',
   },
   {
-    company: 'Google',
-    role: 'Software Engineer',
+    company: 'Commonwealth Bank of Australia',
+    role: 'Technology Graduate (Engineering)',
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vel hic aspernatur molestiae exercitationem rerum reiciendis mollitia magnam harum ipsum?',
-    startDate: 'April 2021',
-    endDate: 'March 2023',
+      'Some stuff',
+    startDate: 'Feb 2024',
+    endDate: 'Aug 2025',
   },
   {
-    company: 'Vercel',
+    company: '',
     role: 'Developer Advocate',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam vel hic aspernatur molestiae exercitationem rerum reiciendis mollitia magnam harum ipsum?',
