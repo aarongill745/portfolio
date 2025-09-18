@@ -10,28 +10,29 @@ export default function Links() {
   const links: { icon: IconType; href: string }[] = [
     {
       icon: SiGmail,
-      href: 'mailto:johndoe@gmail.com',
+      href: 'aarongill7451@gmail.com',
     },
     {
       icon: SiGithub,
-      href: 'https://github.com/johndoe',
+      href: 'https://github.com/aarongill745',
     },
     {
       icon: SiLinkedin,
-      href: 'https://www.linkedin.com/in/johndoe/',
-    },
-    {
-      icon: SiMedium,
-      href: 'https://medium.com/@johndoe',
+      href: 'https://www.linkedin.com/in/aarongill745',
     },
   ]
 
   return (
-    <div className="mr-auto mt-20 flex w-full flex-wrap items-center gap-10">
+    <div className="mr-auto mt-6 flex w-full flex-wrap items-center gap-6">
       {links.map((link, id) => {
         return (
-          <a target="_blank" key={id} href={link.href}>
-            <link.icon title="" />
+          <a
+            target="_blank"
+            key={id}
+            href={link.href}
+            className="pixel-border bg-pixel-blue hover:bg-pixel-green p-3 transition-colors duration-100"
+          >
+            <link.icon size={16} className="text-main-foreground" />
           </a>
         )
       })}
