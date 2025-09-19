@@ -60,6 +60,10 @@
   --color-pixel-green: var(--pixel-green);
   --color-pixel-yellow: var(--pixel-yellow);
   --color-pixel-red: var(--pixel-red);
+  --color-pixel-blue-bg: var(--pixel-blue-bg);
+  --color-pixel-green-bg: var(--pixel-green-bg);
+  --color-pixel-yellow-bg: var(--pixel-yellow-bg);
+  --color-pixel-red-bg: var(--pixel-red-bg);
 
   --spacing-boxShadowX: 2px;
   --spacing-boxShadowY: 2px;

@@ -12,7 +12,7 @@ const PAST_ROLES: {
     description:
       'Working on real time analytics and analysis of AI agents.',
     startDate: 'Aug 2025',
-    endDate: 'Now',
+    endDate: 'Current',
     companyColor: 'var(--pixel-yellow)',
   },
   {
@@ -33,6 +33,14 @@ const PAST_ROLES: {
     endDate: 'Mar 2022',
     companyColor: 'var(--pixel-red)',
   },
+  {
+    company: 'Private Tutoring',
+    role: 'Tutor',
+    description: 'Tutored high school students to make some money during university',
+    startDate: 'Feb 2020',
+    endDate: 'Feb 2021',
+    companyColor: 'var(--pixel-blue)'
+  }
 ]
 
 export default PAST_ROLES

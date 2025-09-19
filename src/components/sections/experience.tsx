@@ -5,7 +5,7 @@ export default function Experience() {
   const timelineItems = PAST_ROLES.map(role => ({
     title: role.role,
     subtitle: role.company,
-    period: `${role.startDate} - ${role.endDate}`,
+    period: `${role.endDate} - ${role.startDate}`,
     description: role.description,
     companyColor: role.companyColor
   }))
