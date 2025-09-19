@@ -69,12 +69,12 @@ export function CustomTimeline({ items }: TimelineProps) {
               }}
             >
               <div>
+                <h4 className="text-sm text-pixel-blue mb-0">
+                  {item.subtitle}
+                </h4>
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-pixel-blue transition-colors duration-200">
                   {item.title}
                 </h3>
-                <h4 className="text-base font-medium text-pixel-blue mb-3">
-                  {item.subtitle}
-                </h4>
               </div>
               <div className="text-sm leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors duration-200">
                 {typeof item.description === 'string' ? (
