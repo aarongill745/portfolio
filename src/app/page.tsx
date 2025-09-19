@@ -8,6 +8,7 @@ export default function Home() {
       <div className="pixel-border bg-secondary-background p-6 mb-8">
         <h1 className="text-xl sm:text-2xl text-main mb-2">AARON GILL</h1>
         <p className="text-sm sm:text-base text-accent">SOFTWARE ENGINEER</p>
+        <p className='text-xs pt-2'>and Sesame Street enthusiast...</p>
       </div>
 
       <div className="pixel-border bg-secondary-background p-6 mb-6">

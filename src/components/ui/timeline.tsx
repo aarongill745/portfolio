@@ -1,5 +1,3 @@
-'use client'
-
 import { ReactNode } from 'react'
 import Timeline from '@mui/lab/Timeline'
 import TimelineItem from '@mui/lab/TimelineItem'
@@ -15,6 +13,7 @@ interface TimelineProps {
     subtitle: string
     period: string
     description: string | ReactNode
+    companyColor?: string
   }>
 }
 
@@ -25,17 +24,21 @@ export function CustomTimeline({ items }: TimelineProps) {
         [`& .${timelineOppositeContentClasses.root}`]: {
           flex: 0.2,
         },
+        // Remove the problematic ::before pseudo-element from MuiTimelineItem-root
+        '& .MuiTimelineItem-root::before': {
+          display: 'none',
+        },
       }}
     >
       {items.map((item, index) => (
         <TimelineItem key={index}>
-          <TimelineOppositeContent color="textSecondary">
+          <TimelineOppositeContent color="text-muted-foreground">
             {item.period}
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot
               sx={{
-                bgcolor: 'var(--pixel-blue)',
+                bgcolor: item.companyColor || 'var(--pixel-blue)',
                 width: 12,
                 height: 12
               }}
@@ -56,7 +59,7 @@ export function CustomTimeline({ items }: TimelineProps) {
               </div>
               <div className="text-sm leading-relaxed text-muted-foreground">
                 {typeof item.description === 'string' ? (
-                  <p className="m-0">{item.description}</p>
+                  <p className="m-0 whitespace-pre-line">{item.description}</p>
                 ) : (
                   item.description
                 )}

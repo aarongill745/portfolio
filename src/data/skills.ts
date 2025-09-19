@@ -1,22 +1,18 @@
 import {
   type IconType,
-  SiAstro,
-  SiBootstrap,
   SiCss3,
   SiDocker,
   SiHtml5,
-  SiJavascript,
+  SiSpringboot,
+  SiTypescript,
+  SiApachekafka,
   SiMongodb,
-  SiMysql,
   SiNextdotjs,
-  SiNginx,
   SiNodedotjs,
   SiPostgresql,
+  SiPython,
   SiReact,
   SiRedis,
-  SiRubyonrails,
-  SiSass,
-  SiTailwindcss,
 } from '@icons-pack/react-simple-icons'
 
 const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
@@ -26,16 +22,9 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
       skills: [
         { skill: 'html', icon: SiHtml5 },
         { skill: 'css', icon: SiCss3 },
-        { skill: 'javascript', icon: SiJavascript },
+        { skill: 'typescript', icon: SiTypescript },
         { skill: 'react', icon: SiReact },
-        { skill: 'sass', icon: SiSass },
-        { skill: 'tailwind', icon: SiTailwindcss },
         { skill: 'nextjs', icon: SiNextdotjs },
-        { skill: 'astro', icon: SiAstro },
-        {
-          skill: 'bootstrap',
-          icon: SiBootstrap,
-        },
       ],
     },
     {
@@ -46,8 +35,16 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
           icon: SiNodedotjs,
         },
         {
-          skill: 'ruby on rails',
-          icon: SiRubyonrails,
+          skill: 'java',
+          icon: SiSpringboot,
+        },
+        {
+          skill: 'python',
+          icon: SiPython,
+        },
+        {
+          skill: 'kafka',
+          icon: SiApachekafka,
         },
         {
           skill: 'redis',
@@ -60,14 +57,6 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
         {
           skill: 'mongodb',
           icon: SiMongodb,
-        },
-        {
-          skill: 'mysql',
-          icon: SiMysql,
-        },
-        {
-          skill: 'nginx',
-          icon: SiNginx,
         },
         {
           skill: 'docker',

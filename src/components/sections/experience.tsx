@@ -6,7 +6,8 @@ export default function Experience() {
     title: role.role,
     subtitle: role.company,
     period: `${role.startDate} - ${role.endDate}`,
-    description: role.description
+    description: role.description,
+    companyColor: role.companyColor
   }))
 
   return (

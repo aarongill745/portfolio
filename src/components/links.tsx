@@ -9,10 +9,6 @@ import {
 export default function Links() {
   const links: { icon: IconType; href: string }[] = [
     {
-      icon: SiGmail,
-      href: 'aarongill7451@gmail.com',
-    },
-    {
       icon: SiGithub,
       href: 'https://github.com/aarongill745',
     },

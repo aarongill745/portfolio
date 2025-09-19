@@ -16,6 +16,7 @@
   --shadow: 2px 2px 0px 0px var(--border);
   --pixel-blue: #3b7dd8;
   --pixel-green: #66bb6a;
+  --pixel-yellow: #ffd700;
   --pixel-red: #e53e3e;
   --grid-color: rgba(45, 45, 68, 0.1);
 }
@@ -32,6 +33,7 @@
   --shadow: 2px 2px 0px 0px var(--border);
   --pixel-blue: #4c5f7a;
   --pixel-green: #5a6b4c;
+  --pixel-yellow: #b8860b;
   --pixel-red: #7a4c4c;
   --grid-color: rgba(42, 31, 45, 0.3);
 }
@@ -48,6 +50,7 @@
   --color-accent: var(--accent);
   --color-pixel-blue: var(--pixel-blue);
   --color-pixel-green: var(--pixel-green);
+  --color-pixel-yellow: var(--pixel-yellow);
   --color-pixel-red: var(--pixel-red);
 
   --spacing-boxShadowX: 2px;
@@ -84,6 +87,7 @@ body {
 .pixel-border {
   border: 2px solid var(--border);
   box-shadow: var(--shadow);
+  border-radius: 4px;
 }
 
 .pixel-button {

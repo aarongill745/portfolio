@@ -7,6 +7,30 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip'
 
+// Technology brand colors mapping
+const TECH_COLORS: Record<string, string> = {
+  html: 'bg-[#E34F26]', // HTML orange
+  css: 'bg-[#1572B6]', // CSS blue
+  typescript: 'bg-[#3178C6]', // TypeScript blue
+  react: 'bg-gradient-to-r from-[#61DAFB] to-[#20232A]', // React cyan to dark
+  nextjs: 'bg-gradient-to-r from-[#000000] to-[#FFFFFF]', // Next.js black to white
+  nodejs: 'bg-[#339933]', // Node.js green
+  java: 'bg-[#6DB33F]', // Spring green
+  python: 'bg-gradient-to-r from-[#3776AB] to-[#FFD43B]', // Python blue to yellow
+  kafka: 'bg-[#231F20]', // Kafka black
+  redis: 'bg-[#DC382D]', // Redis red
+  postgresql: 'bg-[#336791]', // PostgreSQL blue
+  mongodb: 'bg-[#47A248]', // MongoDB green
+  docker: 'bg-[#2496ED]', // Docker blue
+}
+
+// Text colors for better contrast on different backgrounds
+const TEXT_COLORS: Record<string, string> = {
+  nextjs: 'text-black', // Black text on white gradient
+  react: 'text-white',
+  python: 'text-white',
+}
+
 export default function Skills() {
   return (
     <div className="mb-16">
@@ -27,7 +51,11 @@ export default function Skills() {
                       <TooltipTrigger asChild>
                         <skill.icon className="h-8 w-8" title="" />
                       </TooltipTrigger>
-                      <TooltipContent>{skill.skill}</TooltipContent>
+                      <TooltipContent
+                        className={`${TECH_COLORS[skill.skill] || 'bg-main'} ${TEXT_COLORS[skill.skill] || 'text-white'} border-2 border-black font-pixel uppercase tracking-wider px-4 py-2`}
+                      >
+                        {skill.skill}
+                      </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
                 )
