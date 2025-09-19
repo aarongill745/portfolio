@@ -17,6 +17,12 @@ interface TimelineProps {
   }>
 }
 
+function getCompanyBackgroundColor(companyColor?: string): string {
+  if (!companyColor) return 'var(--background)'
+  // Convert "var(--pixel-yellow)" to "var(--pixel-yellow-bg)"
+  return companyColor.replace(')', '-bg)')
+}
+
 export function CustomTimeline({ items }: TimelineProps) {
   return (
     <Timeline
@@ -44,20 +50,23 @@ export function CustomTimeline({ items }: TimelineProps) {
               }}
             />
             {index < items.length - 1 && (
-              <TimelineConnector sx={{ bgcolor: 'var(--pixel-blue)' }} />
+              <TimelineConnector sx={{ bgcolor: item.companyColor || 'var(--pixel-blue)' }} />
             )}
           </TimelineSeparator>
           <TimelineContent>
-            <div className="pixel-border bg-background p-4 mb-4">
+            <div
+              className="pixel-border p-4 mb-4 transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-lg hover:-translate-y-1 cursor-pointer group"
+              style={{ backgroundColor: getCompanyBackgroundColor(item.companyColor) }}
+            >
               <div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-pixel-blue transition-colors duration-200">
                   {item.title}
                 </h3>
                 <h4 className="text-base font-medium text-pixel-blue mb-3">
                   {item.subtitle}
                 </h4>
               </div>
-              <div className="text-sm leading-relaxed text-muted-foreground">
+              <div className="text-sm leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors duration-200">
                 {typeof item.description === 'string' ? (
                   <p className="m-0 whitespace-pre-line">{item.description}</p>
                 ) : (
