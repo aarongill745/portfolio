@@ -15,13 +15,3 @@ pnpm run dev
 docker build -t portfolio .
 docker run -p 3000:3000 portfolio
 ```
-
-## Content
-
-Edit files in `src/data/` to update:
-- `projects.ts` - Project showcase
-- `skills.ts` - Skills by category
-- `experience.ts` - Work history
-- `src/components/links.tsx` - Social links
-
-Icons from [simpleicons.org](https://simpleicons.org/) with `Si` prefix.
