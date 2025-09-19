@@ -1,3 +1,5 @@
+'use client'
+
 import { ReactNode } from 'react'
 import Timeline from '@mui/lab/Timeline'
 import TimelineItem from '@mui/lab/TimelineItem'
@@ -27,6 +29,7 @@ export function CustomTimeline({ items }: TimelineProps) {
   return (
     <Timeline
       sx={{
+        // Reduce the size of the left hand side of the timeline to position it towards the left
         [`& .${timelineOppositeContentClasses.root}`]: {
           flex: 0.2,
         },
@@ -56,7 +59,14 @@ export function CustomTimeline({ items }: TimelineProps) {
           <TimelineContent>
             <div
               className="pixel-border p-4 mb-4 transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-lg hover:-translate-y-1 cursor-pointer group"
-              style={{ backgroundColor: getCompanyBackgroundColor(item.companyColor) }}
+              style={{ backgroundColor: 'var(--background)' }}
+              onMouseEnter={(e) => {
+                // On hover, update the background colour to the company colour (yellow for CBA, red for COLES, etc)
+                e.currentTarget.style.backgroundColor = getCompanyBackgroundColor(item.companyColor) || 'var(--background)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'var(--background)'
+              }}
             >
               <div>
                 <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-pixel-blue transition-colors duration-200">

@@ -17,6 +17,7 @@ const TECH_COLORS: Record<string, string> = {
   nodejs: 'bg-[#339933]', // Node.js green
   java: 'bg-[#6DB33F]', // Spring green
   python: 'bg-gradient-to-r from-[#3776AB] to-[#FFD43B]', // Python blue to yellow
+  'c#': 'bg-[#512BD4]', // C# purple
   kafka: 'bg-[#231F20]', // Kafka black
   redis: 'bg-[#DC382D]', // Redis red
   postgresql: 'bg-[#336791]', // PostgreSQL blue
@@ -26,7 +27,6 @@ const TECH_COLORS: Record<string, string> = {
 
 // Text colors for better contrast on different backgrounds
 const TEXT_COLORS: Record<string, string> = {
-  nextjs: 'text-black', // Black text on white gradient
   react: 'text-white',
   python: 'text-white',
 }
@@ -34,7 +34,9 @@ const TEXT_COLORS: Record<string, string> = {
 export default function Skills() {
   return (
     <div className="mb-16">
-      <h2 className="mb-8 text-xl font-heading sm:text-2xl">Skills</h2>
+      <h2 className="text-xl font-heading sm:text-2xl mb-2">Skills</h2>
+      <p className='text-xs mb-8'>Here are some things I know</p>
+
 
       {SKILLS.map((item, id) => {
         return (

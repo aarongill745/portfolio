@@ -15,6 +15,7 @@ export default function Home() {
         <div className="text-xs sm:text-sm leading-relaxed space-y-4">
           <p>HEY! I&apos;M AARON GILL, A SOFTWARE ENGINEER BASED IN SYDNEY, AUSTRALIA.</p>
           <p>THIS IS MY PORTFOLIO SITE.</p>
+          <p className='text-xs'></p>
         </div>
         <Links />
       </div>

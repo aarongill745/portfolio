@@ -1,5 +1,6 @@
 import {
   type IconType,
+  SiCsharp,
   SiCss3,
   SiDocker,
   SiHtml5,
@@ -41,6 +42,10 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
         {
           skill: 'python',
           icon: SiPython,
+        },
+        {
+          skill: 'c#',
+          icon: SiCsharp,
         },
         {
           skill: 'kafka',

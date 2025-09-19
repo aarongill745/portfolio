@@ -29,8 +29,8 @@ const PAST_ROLES: {
     role: 'Online Pick Packer',
     description:
       'Walked around the store collecting items for online orders.\n\nThis was during COVID',
-    startDate: 'Forgot',
-    endDate: 'Forgot',
+    startDate: 'Feb 2021',
+    endDate: 'Mar 2022',
     companyColor: 'var(--pixel-red)',
   },
 ]
