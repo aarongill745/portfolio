@@ -19,7 +19,7 @@ const PAST_ROLES: {
     company: 'Commonwealth Bank of Australia',
     role: 'Technology Graduate (Engineering)',
     description:
-      '3 x 6 month rotations.\nWorked in Retail Technology, Engineering Platforms, and Business Banking',
+      '3 x 6 month rotations as part of a graduate program.\nRetail Technology (Credit Cards), Engineering Platforms (SDLC Hub), and Business Banking (AI Acceleration)',
     startDate: 'Feb 2024',
     endDate: 'Aug 2025',
     companyColor: 'var(--pixel-yellow)',

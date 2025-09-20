@@ -25,7 +25,57 @@ function getCompanyBackgroundColor(companyColor?: string): string {
   return companyColor.replace(')', '-bg)')
 }
 
-export function CustomTimeline({ items }: TimelineProps) {
+// Mobile timeline component - simple and clean
+function MobileTimeline({ items }: TimelineProps) {
+  return (
+    <div className="space-y-4">
+      {items.map((item, index) => (
+        <div key={index} className="relative">
+          <div className="flex items-center gap-3 mb-3">
+            <div
+              className="w-3 h-3 rounded-full flex-shrink-0"
+              style={{ backgroundColor: item.companyColor || 'var(--pixel-blue)' }}
+            />
+            <span className="text-xs text-muted-foreground font-pixel">
+              {item.period}
+            </span>
+          </div>
+          <div
+            className="pixel-border p-4 transition-all duration-200 ease-in-out active:scale-[0.98] group"
+            style={{ backgroundColor: 'var(--background)' }}
+            onTouchStart={(e) => {
+              e.currentTarget.style.backgroundColor = getCompanyBackgroundColor(item.companyColor) || 'var(--background)'
+            }}
+            onTouchEnd={(e) => {
+              setTimeout(() => {
+                e.currentTarget.style.backgroundColor = 'var(--background)'
+              }, 150)
+            }}
+          >
+            <div>
+              <h4 className="text-xs text-pixel-blue mb-1 font-pixel">
+                {item.subtitle}
+              </h4>
+              <h3 className="text-sm font-semibold text-foreground mb-2 group-active:text-pixel-blue transition-colors duration-200 font-pixel">
+                {item.title}
+              </h3>
+            </div>
+            <div className="text-xs leading-relaxed text-muted-foreground group-active:text-foreground transition-colors duration-200">
+              {typeof item.description === 'string' ? (
+                <p className="m-0 whitespace-pre-line">{item.description}</p>
+              ) : (
+                item.description
+              )}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+// Desktop timeline component - using Material-UI
+function DesktopTimeline({ items }: TimelineProps) {
   return (
     <Timeline
       sx={{
@@ -88,6 +138,23 @@ export function CustomTimeline({ items }: TimelineProps) {
         </TimelineItem>
       ))}
     </Timeline>
+  )
+}
+
+// Main timeline component with conditional rendering
+export function CustomTimeline({ items }: TimelineProps) {
+  return (
+    <>
+      {/* Mobile timeline - visible only on small screens */}
+      <div className="block md:hidden">
+        <MobileTimeline items={items} />
+      </div>
+
+      {/* Desktop timeline - visible only on medium screens and up */}
+      <div className="hidden md:block">
+        <DesktopTimeline items={items} />
+      </div>
+    </>
   )
 }
 

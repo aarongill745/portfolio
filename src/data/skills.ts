@@ -31,42 +31,15 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
     {
       field: 'Backend',
       skills: [
-        {
-          skill: 'nodejs',
-          icon: SiNodedotjs,
-        },
-        {
-          skill: 'java',
-          icon: SiSpringboot,
-        },
-        {
-          skill: 'python',
-          icon: SiPython,
-        },
-        {
-          skill: 'c#',
-          icon: SiCsharp,
-        },
-        {
-          skill: 'kafka',
-          icon: SiApachekafka,
-        },
-        {
-          skill: 'redis',
-          icon: SiRedis,
-        },
-        {
-          skill: 'postgresql',
-          icon: SiPostgresql,
-        },
-        {
-          skill: 'mongodb',
-          icon: SiMongodb,
-        },
-        {
-          skill: 'docker',
-          icon: SiDocker,
-        },
+        { skill: 'nodejs', icon: SiNodedotjs },
+        { skill: 'python', icon: SiPython },
+        { skill: 'java', icon: SiSpringboot },
+        { skill: 'c#', icon: SiCsharp },
+        { skill: 'kafka', icon: SiApachekafka },
+        { skill: 'redis', icon: SiRedis },
+        { skill: 'postgresql', icon: SiPostgresql },
+        { skill: 'mongodb', icon: SiMongodb },
+        { skill: 'docker', icon: SiDocker },
       ],
     },
   ]
