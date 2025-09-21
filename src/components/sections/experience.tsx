@@ -12,7 +12,7 @@ export default function Experience() {
 
   return (
     <div className="mb-16">
-      <h2 className="mb-8 text-xl font-heading sm:text-2xl">Experience</h2>
+      <h2 className="mb-8 text-2xl font-heading sm:text-3xl">Experience</h2>
       <Timeline items={timelineItems} />
     </div>
   )

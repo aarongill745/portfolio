@@ -36,7 +36,7 @@ function MobileTimeline({ items }: TimelineProps) {
               className="w-3 h-3 rounded-full flex-shrink-0"
               style={{ backgroundColor: item.companyColor || 'var(--pixel-blue)' }}
             />
-            <span className="text-xs text-muted-foreground font-pixel">
+            <span className="text-sm text-muted-foreground font-pixel">
               {item.period}
             </span>
           </div>
@@ -53,14 +53,14 @@ function MobileTimeline({ items }: TimelineProps) {
             }}
           >
             <div>
-              <h4 className="text-xs text-pixel-blue mb-1 font-pixel">
+              <h4 className="text-sm text-pixel-blue mb-1 font-pixel">
                 {item.subtitle}
               </h4>
-              <h3 className="text-sm font-semibold text-foreground mb-2 group-active:text-pixel-blue transition-colors duration-200 font-pixel">
+              <h3 className="text-base font-semibold text-foreground mb-2 group-active:text-pixel-blue transition-colors duration-200 font-pixel">
                 {item.title}
               </h3>
             </div>
-            <div className="text-xs leading-relaxed text-muted-foreground group-active:text-foreground transition-colors duration-200">
+            <div className="text-sm leading-relaxed text-muted-foreground group-active:text-foreground transition-colors duration-200">
               {typeof item.description === 'string' ? (
                 <p className="m-0 whitespace-pre-line">{item.description}</p>
               ) : (
@@ -119,14 +119,14 @@ function DesktopTimeline({ items }: TimelineProps) {
               }}
             >
               <div>
-                <h4 className="text-sm text-pixel-blue mb-0">
+                <h4 className="text-base text-pixel-blue mb-0">
                   {item.subtitle}
                 </h4>
-                <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-pixel-blue transition-colors duration-200">
+                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-pixel-blue transition-colors duration-200">
                   {item.title}
                 </h3>
               </div>
-              <div className="text-sm leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors duration-200">
+              <div className="text-base leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors duration-200">
                 {typeof item.description === 'string' ? (
                   <p className="m-0 whitespace-pre-line">{item.description}</p>
                 ) : (
