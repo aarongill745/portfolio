@@ -24,7 +24,7 @@ export default function RootLayout({
     <ViewTransitions>
       <html suppressHydrationWarning lang="en">
         <body className={`${pressStart2P.variable} font-pixel`}>
-          <ThemeProvider attribute="class" disableTransitionOnChange>
+          <ThemeProvider attribute="class" defaultTheme="system" disableTransitionOnChange>
             <div className="text-foreground mx-auto w-[750px] max-w-full px-5 pt-14 pb-10">
               {children}
             </div>
