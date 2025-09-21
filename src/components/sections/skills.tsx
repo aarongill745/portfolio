@@ -23,6 +23,13 @@ const TECH_COLORS: Record<string, string> = {
   postgresql: 'bg-[#336791]', // PostgreSQL blue
   mongodb: 'bg-[#47A248]', // MongoDB green
   docker: 'bg-[#2496ED]', // Docker blue
+  'aws ecs': 'bg-[#FF9900]', // AWS ECS orange
+  'aws ec2': 'bg-[#F58536]', // AWS EC2 orange-red
+  'aws s3': 'bg-[#3F9F41]', // AWS S3 green
+  'aws rds': 'bg-[#2C5AA0]', // AWS RDS blue
+  'aws dynamodb': 'bg-[#FF6600]', // AWS DynamoDB orange
+  'aws lambda': 'bg-[#FF9900]', // AWS Lambda orange
+  'aws msk': 'bg-[#231F20]', // Kafka black (for MSK)
 }
 
 // Text colors for better contrast on different backgrounds
