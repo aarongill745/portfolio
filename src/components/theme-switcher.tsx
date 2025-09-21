@@ -17,7 +17,7 @@ export function ThemeSwitcher() {
   // Render a placeholder during SSR to prevent hydration mismatch
   if (!mounted) {
     return (
-      <div className="fixed bottom-6 right-6 z-50">
+      <div>
         <button
           className="group relative pixel-border bg-main text-main-foreground p-3"
           disabled
@@ -32,7 +32,7 @@ export function ThemeSwitcher() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div>
       <button
         onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
         className="group relative pixel-border bg-main hover:bg-pixel-blue text-main-foreground p-3 transition-all duration-200 hover:scale-105 active:scale-95"

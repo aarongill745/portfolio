@@ -1,16 +1,22 @@
 import Links from '@/components/links'
 import Experience from '@/components/sections/experience'
 import Skills from '@/components/sections/skills'
+import { ThemeSwitcher } from '@/components/theme-switcher'
 
 export default function Home() {
   return (
     <div className="font-pixel">
-      <div className="pixel-border bg-secondary-background p-6 mb-8">
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-          <div className="flex-1">
-            <h1 className="text-xl sm:text-2xl text-main mb-2">AARON GILL</h1>
-            <p className="text-sm sm:text-base text-accent">SOFTWARE ENGINEER</p>
-            <p className='text-xs pt-2'>and Sesame Street enthusiast...</p>
+      <div>
+        <div className='flex justify-end pb-4'>
+          <ThemeSwitcher/>
+        </div>
+        <div className="pixel-border bg-secondary-background p-6 mb-8">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div className="flex-1">
+              <h1 className="text-xl sm:text-2xl text-main mb-2">AARON GILL</h1>
+              <p className="text-sm sm:text-base text-accent">SOFTWARE ENGINEER</p>
+              <p className='text-xs pt-2'>and Sesame Street enthusiast...</p>
+            </div>
           </div>
         </div>
       </div>
