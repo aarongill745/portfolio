@@ -47,9 +47,12 @@ function MobileTimeline({ items }: TimelineProps) {
               e.currentTarget.style.backgroundColor = getCompanyBackgroundColor(item.companyColor) || 'var(--background)'
             }}
             onTouchEnd={(e) => {
+              const target = e.currentTarget
               setTimeout(() => {
-                e.currentTarget.style.backgroundColor = 'var(--background)'
-              }, 150)
+                if (target && target.style) {
+                  target.style.backgroundColor = 'var(--background)'
+                }
+              }, 1000000)
             }}
           >
             <div>

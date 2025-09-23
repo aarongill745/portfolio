@@ -36,7 +36,7 @@ const PAST_ROLES: {
   {
     company: 'Private Tutoring',
     role: 'Tutor',
-    description: 'Tutored math for high school students',
+description: 'Tutored math for high school students',
     startDate: 'Feb 2020',
     endDate: 'Feb 2021',
     companyColor: 'var(--pixel-blue)'
