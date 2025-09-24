@@ -21,7 +21,7 @@ interface TimelineProps {
 
 function getCompanyBackgroundColor(companyColor?: string): string {
   if (!companyColor) return 'var(--background)'
-  // Convert "var(--pixel-yellow)" to "var(--pixel-yellow-bg)"
+  // Converts "var(--pixel-yellow)" to "var(--pixel-yellow-bg)"
   return companyColor.replace(')', '-bg)')
 }
 
@@ -77,7 +77,7 @@ function MobileTimeline({ items }: TimelineProps) {
   )
 }
 
-// Desktop timeline component - using Material-UI
+// Desktop timeline component - using Material-UI timeline component
 function DesktopTimeline({ items }: TimelineProps) {
   return (
     <Timeline
@@ -144,7 +144,7 @@ function DesktopTimeline({ items }: TimelineProps) {
   )
 }
 
-// Main timeline component with conditional rendering
+// Main timeline component with conditional rendering for responsiveness
 export function CustomTimeline({ items }: TimelineProps) {
   return (
     <>
