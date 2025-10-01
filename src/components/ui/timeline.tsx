@@ -41,7 +41,7 @@ function MobileTimeline({ items }: TimelineProps) {
             </span>
           </div>
           <div
-            className="pixel-border p-4 transition-all duration-200 ease-in-out active:scale-[0.98] group"
+            className="p-4 transition-all duration-150 ease-in-out active:translate-y-1 active:[box-shadow:2px_2px_0px_0px_var(--border)] group border-[3px] border-border rounded-[4px] [box-shadow:4px_4px_0px_0px_var(--border)]"
             style={{ backgroundColor: 'var(--background)' }}
             onTouchStart={(e) => {
               e.currentTarget.style.backgroundColor = getCompanyBackgroundColor(item.companyColor) || 'var(--background)'
@@ -111,7 +111,7 @@ function DesktopTimeline({ items }: TimelineProps) {
           </TimelineSeparator>
           <TimelineContent>
             <div
-              className="pixel-border p-4 mb-4 transition-all duration-200 ease-in-out hover:scale-105 hover:shadow-lg hover:-translate-y-1 cursor-pointer group"
+              className="p-4 mb-4 transition-all duration-150 ease-in-out hover:-translate-y-2 hover:[box-shadow:6px_6px_0px_0px_var(--border)] cursor-pointer group border-[3px] border-border rounded-[4px] [box-shadow:4px_4px_0px_0px_var(--border)]"
               style={{ backgroundColor: 'var(--background)' }}
               onMouseEnter={(e) => {
                 // On hover, update the background colour to the company colour (yellow for CBA, red for COLES, etc)

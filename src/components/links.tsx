@@ -26,7 +26,7 @@ export default function Links() {
             target="_blank"
             key={id}
             href={link.href}
-            className="pixel-border bg-pixel-blue hover:bg-pixel-green p-3 transition-colors duration-100"
+            className="pixel-border bg-pixel-blue hover:bg-white dark:hover:bg-purple-400 p-3 transition-colors duration-100"
           >
             <link.icon size={16} className="text-main-foreground" />
           </a>
