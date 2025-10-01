@@ -49,15 +49,15 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
       ],
     },
     {
-      field: 'Cloud',
+      field: 'Cloud (AWS is all I know...)',
       skills: [
-        { skill: 'aws ecs', icon: SiAmazonecs },
-        { skill: 'aws ec2', icon: SiAmazonec2 },
-        { skill: 'aws s3', icon: SiAmazons3 },
-        { skill: 'aws rds', icon: SiAmazonrds },
-        { skill: 'aws dynamodb', icon: SiAmazondynamodb },
-        { skill: 'aws lambda', icon: SiAwslambda },
-        { skill: 'aws msk', icon: SiApachekafka },
+        { skill: 'ecs', icon: SiAmazonecs },
+        { skill: 'ec2', icon: SiAmazonec2 },
+        { skill: 's3', icon: SiAmazons3 },
+        { skill: 'rds', icon: SiAmazonrds },
+        { skill: 'dynamodb', icon: SiAmazondynamodb },
+        { skill: 'lambda', icon: SiAwslambda },
+        { skill: 'msk', icon: SiApachekafka },
       ],
     },
   ]
