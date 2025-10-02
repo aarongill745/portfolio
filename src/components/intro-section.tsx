@@ -25,11 +25,18 @@ export function IntroSection() {
       }}
     >
       <div
-        className="text-xs sm:text-sm leading-relaxed space-y-4 dark:text-white"
+        className="text-xs sm:text-sm leading-relaxed space-y-4 text-white"
         style={{
-          textShadow: resolvedTheme === 'dark'
-            ? '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'
-            : 'none'
+          textShadow: `
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000,
+            0 -1px 0 #000,
+            0 1px 0 #000,
+            -1px 0 0 #000,
+            1px 0 0 #000
+          `
         }}
       >
         <p>HEY! I&apos;M AARON GILL, A SOFTWARE ENGINEER BASED IN SYDNEY, AUSTRALIA.</p>
