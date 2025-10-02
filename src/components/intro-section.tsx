@@ -17,7 +17,7 @@ export function IntroSection() {
 
   const cloudsBg = resolvedTheme === 'dark' ? darkClouds.src : lightClouds.src
 
-  return (
+return (
     <div
       className="pixel-border p-6 mb-6 bg-cover bg-center transition-all"
       style={{
