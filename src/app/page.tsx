@@ -6,9 +6,9 @@ import { IntroSection } from '@/components/intro-section'
 
 export default function Home() {
   const leftSprites = [
-    { src: '/portfolio/images/sprites/dark/flying/Characters-Character01-Fly_00.png', top: '0%', right: '10%' },
-    { src: '/portfolio/images/sprites/dark/flying/Characters-Character03-Fly_11.png', top: '40%', right: '-10%' },
-    { src: '/portfolio/images/sprites/dark/flying/Characters-Character10-Fly_06.png', top: '80%', right: '5%' },
+    { src: '/portfolio/images/sprites/dark/flying/Characters-Character01-Fly_00.png', top: '0%', right: '20%' },
+    { src: '/portfolio/images/sprites/dark/flying/Characters-Character11-Fly_00.png', top: '40%', right: '10%' },
+    { src: '/portfolio/images/sprites/dark/flying/Characters-Character10-Fly_06.png', top: '80%', right: '0%' },
   ]
 
   const rightSprites = [
