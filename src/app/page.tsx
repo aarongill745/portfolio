@@ -18,9 +18,9 @@ export default function Home() {
   ]
 
   return (
-    <div className='grid grid-cols-[1fr_750px_1fr] w-full'>
-      {/* Left container */}
-      <div className='bg-primary relative overflow-visible z-10'>
+    <div className='grid grid-cols-1 xl:grid-cols-[1fr_750px_1fr] w-full'>
+      {/* Left container - hidden on mobile */}
+      <div className='hidden xl:block bg-primary relative overflow-visible z-10'>
         {leftSprites.map((sprite) => (
           <img
             key={sprite.src}
@@ -57,8 +57,8 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Right container */}
-      <div className='bg-primary relative overflow-visible z-10'>
+      {/* Right container - hidden on mobile */}
+      <div className='hidden xl:block bg-primary relative overflow-visible z-10'>
         {rightSprites.map((sprite) => (
           <img
             key={sprite.src + '-right'}
