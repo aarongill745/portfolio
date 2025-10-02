@@ -7,14 +7,14 @@ import { IntroSection } from '@/components/intro-section'
 export default function Home() {
   const leftSprites = [
     { src: '/portfolio/images/sprites/dark/flying/Characters-Character01-Fly_00.png', top: '0%', right: '20%' },
-    { src: '/portfolio/images/sprites/dark/flying/Characters-Character11-Fly_00.png', top: '40%', right: '10%' },
-    { src: '/portfolio/images/sprites/dark/flying/Characters-Character10-Fly_06.png', top: '80%', right: '0%' },
+    { src: '/portfolio/images/sprites/dark/flying/Characters-Character11-Fly_00.png', top: '40%', right: '0%' },
+    { src: '/portfolio/images/sprites/dark/flying/Characters-Character10-Fly_06.png', top: '80%', right: '-20%' },
   ]
 
   const rightSprites = [
     { src: '/portfolio/images/sprites/dark/flying/Characters-Character13-Fly_04.png', top: '10%', left: '0%' },
     { src: '/portfolio/images/sprites/dark/flying/flyingRacoon1.png', top: '50%', left: '-20%' },
-    { src: '/portfolio/images/sprites/dark/walking/Characters-Character12-Walk_00.png', top: '90%', left: '-30%' },
+    { src: '/portfolio/images/sprites/dark/walking/Characters-Character12-Walk_00.png', top: '90%', left: '-40%' },
   ]
 
   return (
