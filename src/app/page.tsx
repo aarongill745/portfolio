@@ -1,30 +1,48 @@
+'use client'
 import Experience from '@/components/sections/experience'
 import Skills from '@/components/sections/skills'
 import { ThemeSwitcher } from '@/components/theme-switcher'
 import { HeroSection } from '@/components/hero-section'
 import { IntroSection } from '@/components/intro-section'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+  const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  // Avoid hydration mismatch by only rendering sprites after mount
+  useEffect(() => {
+    setMounted(true)
+  }, [])
   const leftSprites = [
-    { src: '/portfolio/images/sprites/dark/flying/Characters-Character01-Fly_00.png', top: '0%', right: '20%' },
-    { src: '/portfolio/images/sprites/dark/flying/Characters-Character11-Fly_00.png', top: '40%', right: '0%' },
-    { src: '/portfolio/images/sprites/dark/flying/Characters-Character10-Fly_06.png', top: '80%', right: '-20%' },
+    { src: '/portfolio/images/sprites/dark/sideSprites/left1.png', top: '0%', right: '20%' },
+    { src: '/portfolio/images/sprites/dark/sideSprites/left2.png', top: '40%', right: '0%' },
+    { src: '/portfolio/images/sprites/dark/sideSprites/left3.png', top: '80%', right: '-20%' },
   ]
 
   const rightSprites = [
-    { src: '/portfolio/images/sprites/dark/flying/Characters-Character13-Fly_04.png', top: '10%', left: '0%' },
-    { src: '/portfolio/images/sprites/dark/flying/flyingRacoon1.png', top: '50%', left: '-20%' },
-    { src: '/portfolio/images/sprites/dark/walking/Characters-Character12-Walk_00.png', top: '90%', left: '-40%' },
+    { src: '/portfolio/images/sprites/dark/sideSprites/right1.png', top: '10%', left: '0%' },
+    { src: '/portfolio/images/sprites/dark/sideSprites/right2.png', top: '50%', left: '-20%' },
+    { src: '/portfolio/images/sprites/dark/sideSprites/right3.png', top: '90%', left: '-40%' },
   ]
+
+  const getThemedSpritePath = (spritePath: string, currentTheme: string | undefined): string => {
+    // Default to dark if theme is undefined or 'system'
+    if (currentTheme === 'light') {
+      return spritePath.replace('/dark/', '/light/')
+    }
+    return spritePath
+  }
 
   return (
     <div className='grid grid-cols-1 xl:grid-cols-[1fr_750px_1fr] w-full'>
       {/* Left container - hidden on mobile */}
       <div className='hidden xl:block bg-primary relative overflow-visible z-10'>
-        {leftSprites.map((sprite) => (
+        {mounted && leftSprites.map((sprite) => (
           <img
             key={sprite.src}
-            src={sprite.src}
+            src={getThemedSpritePath(sprite.src, theme)}
             alt=""
             className='pixel-art absolute'
             style={{
@@ -59,10 +77,10 @@ export default function Home() {
 
       {/* Right container - hidden on mobile */}
       <div className='hidden xl:block bg-primary relative overflow-visible z-10'>
-        {rightSprites.map((sprite) => (
+        {mounted && rightSprites.map((sprite) => (
           <img
             key={sprite.src + '-right'}
-            src={sprite.src}
+            src={getThemedSpritePath(sprite.src, theme)}
             alt=""
             className='pixel-art absolute'
             style={{
