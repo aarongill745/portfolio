@@ -17,14 +17,14 @@ export default function Home() {
   }, [])
   const leftSprites = [
     { src: '/portfolio/images/sprites/dark/sideSprites/left1.png', top: '0%', right: '20%' },
-    { src: '/portfolio/images/sprites/dark/sideSprites/left2.png', top: '40%', right: '0%' },
-    { src: '/portfolio/images/sprites/dark/sideSprites/left3.png', top: '80%', right: '-20%' },
+    { src: '/portfolio/images/sprites/dark/sideSprites/left2.png', top: '40%', right: '10%' },
+    { src: '/portfolio/images/sprites/dark/sideSprites/left3.png', top: '80%', right: '0%' },
   ]
 
   const rightSprites = [
-    { src: '/portfolio/images/sprites/dark/sideSprites/right1.png', top: '10%', left: '0%' },
-    { src: '/portfolio/images/sprites/dark/sideSprites/right2.png', top: '50%', left: '-20%' },
-    { src: '/portfolio/images/sprites/dark/sideSprites/right3.png', top: '90%', left: '-40%' },
+    { src: '/portfolio/images/sprites/dark/sideSprites/right1.png', top: '10%', left: '20%' },
+    { src: '/portfolio/images/sprites/dark/sideSprites/right2.png', top: '50%', left: '10%' },
+    { src: '/portfolio/images/sprites/dark/sideSprites/right3.png', top: '90%', left: '0%' },
   ]
 
   const getThemedSpritePath = (spritePath: string, currentTheme: string | undefined): string => {
