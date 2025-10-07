@@ -11,9 +11,4 @@ pnpm i
 pnpm run dev
 ```
 
-## Docker
-
-```bash
-docker build -t portfolio .
-docker run -p 3000:3000 portfolio
-```
+No docker since it's going straight to github pages.
