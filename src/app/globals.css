@@ -34,6 +34,7 @@
   --accent: #8b2635;
   --border: #2a1f2d;
   --ring: #b8860b;
+  --overlay: rgba(10, 10, 15, 0.85);
   --shadow: 2px 2px 0px 0px var(--border);
   --pixel-blue: #4c5f7a;
   --pixel-green: #5a6b4c;

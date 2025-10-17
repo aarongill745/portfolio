@@ -8,6 +8,14 @@ import TimelineConnector from '@mui/lab/TimelineConnector'
 import TimelineContent from '@mui/lab/TimelineContent'
 import TimelineDot from '@mui/lab/TimelineDot'
 import TimelineOppositeContent, { timelineOppositeContentClasses } from '@mui/lab/TimelineOppositeContent'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
 
 interface TimelineProps {
   items: Array<{
@@ -16,6 +24,8 @@ interface TimelineProps {
     period: string
     description: string | ReactNode
     companyColor?: string
+    technologies?: string[]
+    detailedResponsibilities?: string[]
   }>
 }
 
@@ -40,37 +50,92 @@ function MobileTimeline({ items }: TimelineProps) {
               {item.period}
             </span>
           </div>
-          <div
-            className="p-4 transition-all duration-150 ease-in-out active:translate-y-1 active:[box-shadow:2px_2px_0px_0px_var(--border)] group border-[3px] border-border rounded-[4px] [box-shadow:4px_4px_0px_0px_var(--border)]"
-            style={{ backgroundColor: 'var(--background)' }}
-            onTouchStart={(e) => {
-              e.currentTarget.style.backgroundColor = getCompanyBackgroundColor(item.companyColor) || 'var(--background)'
-            }}
-            onTouchEnd={(e) => {
-              const target = e.currentTarget
-              setTimeout(() => {
-                if (target && target.style) {
-                  target.style.backgroundColor = 'var(--background)'
-                }
-              }, 1000000)
-            }}
-          >
-            <div>
-              <h4 className="text-sm text-pixel-blue mb-1 font-pixel">
-                {item.subtitle}
-              </h4>
-              <h3 className="text-base font-semibold text-foreground mb-2 group-active:text-pixel-blue transition-colors duration-200 font-pixel">
-                {item.title}
-              </h3>
-            </div>
-            <div className="text-sm leading-relaxed text-muted-foreground group-active:text-foreground transition-colors duration-200">
-              {typeof item.description === 'string' ? (
-                <p className="m-0 whitespace-pre-line">{item.description}</p>
-              ) : (
-                item.description
-              )}
-            </div>
-          </div>
+          <Dialog>
+            <DialogTrigger asChild>
+              <div
+                className="p-4 transition-all duration-150 ease-in-out active:translate-y-1 active:[box-shadow:2px_2px_0px_0px_var(--border)] group border-[3px] border-border rounded-[4px] [box-shadow:4px_4px_0px_0px_var(--border)] cursor-pointer"
+                style={{ backgroundColor: 'var(--background)' }}
+                onTouchStart={(e) => {
+                  e.currentTarget.style.backgroundColor = getCompanyBackgroundColor(item.companyColor) || 'var(--background)'
+                }}
+                onTouchEnd={(e) => {
+                  const target = e.currentTarget
+                  setTimeout(() => {
+                    if (target && target.style) {
+                      target.style.backgroundColor = 'var(--background)'
+                    }
+                  }, 1000000)
+                }}
+              >
+                <div>
+                  <h4 className="text-sm text-pixel-blue mb-1 font-pixel">
+                    {item.subtitle}
+                  </h4>
+                  <h3 className="text-base font-semibold text-foreground mb-2 group-active:text-pixel-blue transition-colors duration-200 font-pixel">
+                    {item.title}
+                  </h3>
+                </div>
+                <div className="text-sm leading-relaxed text-muted-foreground group-active:text-foreground transition-colors duration-200">
+                  {typeof item.description === 'string' ? (
+                    <p className="m-0 whitespace-pre-line">{item.description}</p>
+                  ) : (
+                    item.description
+                  )}
+                </div>
+                {item.technologies && item.technologies.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {item.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-1 text-xs border-2 border-border bg-background"
+                        style={{ borderRadius: 0 }}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </DialogTrigger>
+            <DialogContent className="max-w-2xl border-[3px] border-border [box-shadow:6px_6px_0px_0px_var(--border)]" style={{ borderRadius: 0 }}>
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-semibold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                  {item.title}
+                </DialogTitle>
+                <DialogDescription className="text-base" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                  {item.subtitle} • {item.period}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="mt-4 space-y-4" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                {item.detailedResponsibilities && item.detailedResponsibilities.length > 0 && (
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2">Key Responsibilities</h4>
+                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                      {item.detailedResponsibilities.map((responsibility, idx) => (
+                        <li key={idx} className="leading-relaxed">{responsibility}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {item.technologies && item.technologies.length > 0 && (
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2">Technologies</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {item.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1.5 text-sm border-2 border-border bg-background"
+                          style={{ borderRadius: 0 }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </DialogContent>
+          </Dialog>
         </div>
       ))}
     </div>
@@ -110,33 +175,88 @@ function DesktopTimeline({ items }: TimelineProps) {
             )}
           </TimelineSeparator>
           <TimelineContent>
-            <div
-              className="p-4 mb-4 transition-all duration-150 ease-in-out hover:-translate-y-2 hover:[box-shadow:6px_6px_0px_0px_var(--border)] cursor-pointer group border-[3px] border-border rounded-[4px] [box-shadow:4px_4px_0px_0px_var(--border)]"
-              style={{ backgroundColor: 'var(--background)' }}
-              onMouseEnter={(e) => {
-                // On hover, update the background colour to the company colour (yellow for CBA, red for COLES, etc)
-                e.currentTarget.style.backgroundColor = getCompanyBackgroundColor(item.companyColor) || 'var(--background)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'var(--background)'
-              }}
-            >
-              <div>
-                <h4 className="text-base text-pixel-blue mb-0">
-                  {item.subtitle}
-                </h4>
-                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-pixel-blue transition-colors duration-200">
-                  {item.title}
-                </h3>
-              </div>
-              <div className="text-base leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors duration-200">
-                {typeof item.description === 'string' ? (
-                  <p className="m-0 whitespace-pre-line">{item.description}</p>
-                ) : (
-                  item.description
-                )}
-              </div>
-            </div>
+            <Dialog>
+              <DialogTrigger asChild>
+                <div
+                  className="p-4 mb-4 transition-all duration-150 ease-in-out hover:-translate-y-2 hover:[box-shadow:6px_6px_0px_0px_var(--border)] cursor-pointer group border-[3px] border-border rounded-[4px] [box-shadow:4px_4px_0px_0px_var(--border)]"
+                  style={{ backgroundColor: 'var(--background)' }}
+                  onMouseEnter={(e) => {
+                    // On hover, update the background colour to the company colour (yellow for CBA, red for COLES, etc)
+                    e.currentTarget.style.backgroundColor = getCompanyBackgroundColor(item.companyColor) || 'var(--background)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = 'var(--background)'
+                  }}
+                >
+                  <div>
+                    <h4 className="text-base text-pixel-blue mb-0">
+                      {item.subtitle}
+                    </h4>
+                    <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-pixel-blue transition-colors duration-200">
+                      {item.title}
+                    </h3>
+                  </div>
+                  <div className="text-base leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors duration-200">
+                    {typeof item.description === 'string' ? (
+                      <p className="m-0 whitespace-pre-line">{item.description}</p>
+                    ) : (
+                      item.description
+                    )}
+                  </div>
+                  {item.technologies && item.technologies.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {item.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-1 text-xs border-2 border-border bg-background"
+                          style={{ borderRadius: 0 }}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl border-[3px] border-border [box-shadow:6px_6px_0px_0px_var(--border)]" style={{ borderRadius: 0 }}>
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-semibold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                    {item.title}
+                  </DialogTitle>
+                  <DialogDescription className="text-base" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                    {item.subtitle} • {item.period}
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="mt-4 space-y-4" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                  {item.detailedResponsibilities && item.detailedResponsibilities.length > 0 && (
+                    <div>
+                      <h4 className="font-semibold text-lg mb-2">Key Responsibilities</h4>
+                      <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                        {item.detailedResponsibilities.map((responsibility, idx) => (
+                          <li key={idx} className="leading-relaxed">{responsibility}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {item.technologies && item.technologies.length > 0 && (
+                    <div>
+                      <h4 className="font-semibold text-lg mb-2">Technologies</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {item.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-3 py-1.5 text-sm border-2 border-border bg-background"
+                            style={{ borderRadius: 0 }}
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </DialogContent>
+            </Dialog>
           </TimelineContent>
         </TimelineItem>
       ))}
