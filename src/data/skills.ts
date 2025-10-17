@@ -49,7 +49,7 @@ const SKILLS: { field: string; skills: { skill: string; icon: IconType }[] }[] =
       ],
     },
     {
-      field: 'Cloud (AWS is all I know...)',
+      field: 'Cloud (Mainly AWS)',
       skills: [
         { skill: 'ecs', icon: SiAmazonecs },
         { skill: 'ec2', icon: SiAmazonec2 },
