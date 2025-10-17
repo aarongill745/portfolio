@@ -21,6 +21,8 @@
   --scrollbar-width: 20px;
   --font-weight-base: 500;
   --font-weight-heading: 700;
+  --dot-radius: 50%;
+  --timeline-connector: #ffffff;
 }
 
 .dark {
@@ -55,6 +57,8 @@
   --font-weight-base: 400;
   --font-weight-heading: 400;
   --grid-color: rgba(45, 45, 68, 0.1);
+  --dot-radius: 0%;
+  --timeline-connector: #91a3c2;
 
   /* Vibrant pixel mode colors */
   --pixel-gold: #ffd700;
