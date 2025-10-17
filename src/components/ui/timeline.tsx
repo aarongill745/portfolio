@@ -51,7 +51,7 @@ function MobileTimeline({ items }: TimelineProps) {
                 style={{ backgroundColor: 'var(--secondary-background)' }}
               >
                 <div>
-                  <h4 className="text-sm mb-1 font-pixel font-bold text-[#91a3c2]">
+                  <h4 className="text-sm mb-1 font-pixel font-bold" style={{ color: 'var(--company-title-color)' }}>
                     {item.subtitle}
                   </h4>
                   <h3 className="text-base font-semibold text-foreground mb-2 font-pixel">
@@ -70,8 +70,13 @@ function MobileTimeline({ items }: TimelineProps) {
                     {item.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1.5 text-xs font-bold border-2 border-border bg-[#91a3c2] text-white [box-shadow:2px_2px_0px_0px_var(--border)]"
-                        style={{ borderRadius: 0 }}
+                        className="px-3 py-1.5 text-xs font-bold [box-shadow:2px_2px_0px_0px_var(--border)]"
+                        style={{
+                          borderRadius: 0,
+                          backgroundColor: 'var(--skill-bg)',
+                          color: 'var(--skill-text)',
+                          border: '2px solid var(--skill-border)'
+                        }}
                       >
                         {tech}
                       </span>
@@ -158,7 +163,7 @@ function DesktopTimeline({ items }: TimelineProps) {
                 bgcolor: item.companyColor || '#91a3c2',
                 width: 16,
                 height: 16,
-                border: '3px solid var(--border)',
+                border: '3px solid var(--timeline-border)',
                 boxShadow: '0 0 0 3px var(--background)',
                 borderRadius: 'var(--dot-radius, 50%)'
               }}
@@ -168,7 +173,7 @@ function DesktopTimeline({ items }: TimelineProps) {
                 sx={{
                   bgcolor: 'var(--timeline-connector, #91a3c2)',
                   width: 4,
-                  border: '2px solid var(--border)',
+                  border: '2px solid var(--timeline-border)',
                   boxShadow: '2px 0 0 0 var(--background), -2px 0 0 0 var(--background)'
                 }}
               />
@@ -182,7 +187,7 @@ function DesktopTimeline({ items }: TimelineProps) {
                   style={{ backgroundColor: 'var(--secondary-background)' }}
                 >
                   <div>
-                    <h4 className="text-base mb-0 font-bold text-[#91a3c2]">
+                    <h4 className="text-base mb-0 font-bold" style={{ color: 'var(--company-title-color)' }}>
                       {item.subtitle}
                     </h4>
                     <h3 className="text-xl font-bold text-foreground mb-2">
@@ -201,8 +206,13 @@ function DesktopTimeline({ items }: TimelineProps) {
                       {item.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1.5 text-xs font-bold border-2 border-border bg-[#91a3c2] text-white [box-shadow:2px_2px_0px_0px_var(--border)]"
-                          style={{ borderRadius: 0 }}
+                          className="px-3 py-1.5 text-xs font-bold [box-shadow:2px_2px_0px_0px_var(--border)]"
+                          style={{
+                            borderRadius: 0,
+                            backgroundColor: 'var(--skill-bg)',
+                            color: 'var(--skill-text)',
+                            border: '2px solid var(--skill-border)'
+                          }}
                         >
                           {tech}
                         </span>

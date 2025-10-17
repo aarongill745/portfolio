@@ -23,6 +23,11 @@
   --font-weight-heading: 700;
   --dot-radius: 50%;
   --timeline-connector: #ffffff;
+  --timeline-border: #000000;
+  --company-title-color: #91a3c2;
+  --skill-bg: #facc15;
+  --skill-text: #000000;
+  --skill-border: #000000;
 }
 
 .dark {
@@ -36,6 +41,12 @@
   --ring: #facc15;
   --overlay: rgba(0, 0, 0, 0.9);
   --shadow: 6px 6px 0px 0px #b19cd9;
+  --timeline-connector: #ffffff;
+  --timeline-border: #ffffff;
+  --company-title-color: #ffffff;
+  --skill-bg: #000000;
+  --skill-text: #ffffff;
+  --skill-border: #ffffff;
 }
 
 /* Pixel aesthetic overrides */
