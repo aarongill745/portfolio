@@ -25,17 +25,17 @@ return (
       }}
     >
       <div
-        className="text-xs sm:text-sm leading-relaxed space-y-4 text-white"
+        className="text-sm sm:text-base leading-relaxed space-y-4 text-white font-bold"
         style={{
           textShadow: `
-            -1px -1px 0 #000,
-            1px -1px 0 #000,
-            -1px 1px 0 #000,
-            1px 1px 0 #000,
-            0 -1px 0 #000,
-            0 1px 0 #000,
-            -1px 0 0 #000,
-            1px 0 0 #000
+            -2px -2px 0 #000,
+            2px -2px 0 #000,
+            -2px 2px 0 #000,
+            2px 2px 0 #000,
+            0 -2px 0 #000,
+            0 2px 0 #000,
+            -2px 0 0 #000,
+            2px 0 0 #000
           `
         }}
       >

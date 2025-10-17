@@ -1,14 +1,20 @@
 import type { Metadata } from 'next'
-import { Press_Start_2P } from 'next/font/google'
+import { Press_Start_2P, Epilogue } from 'next/font/google'
 import './globals.css'
 import { ViewTransitions } from 'next-view-transitions'
 import { ThemeProvider } from '@/components/theme-provider'
-import { ThemeSwitcher } from '@/components/theme-switcher'
+import { AestheticProvider } from '@/components/aesthetic-provider'
 
 const pressStart2P = Press_Start_2P({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-pixel'
+})
+
+const epilogue = Epilogue({
+  subsets: ['latin'],
+  variable: '--font-modern',
+  weight: ['400', '500', '600', '700']
 })
 
 export const metadata: Metadata = {
@@ -22,12 +28,14 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html suppressHydrationWarning lang="en">
-        <body className={`${pressStart2P.variable} font-pixel`}>
+      <html suppressHydrationWarning lang="en" data-aesthetic="pixel">
+        <body className={`${pressStart2P.variable} ${epilogue.variable} font-pixel`}>
           <ThemeProvider attribute="class" defaultTheme="system" disableTransitionOnChange>
-            <div className="text-foreground mx-auto max-w-full px-5 pt-14 pb-10">
-              {children}
-            </div>
+            <AestheticProvider>
+              <div className="text-foreground mx-auto max-w-full px-5 pt-14 pb-10">
+                {children}
+              </div>
+            </AestheticProvider>
           </ThemeProvider>
         </body>
       </html>

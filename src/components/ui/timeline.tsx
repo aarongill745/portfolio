@@ -29,12 +29,6 @@ interface TimelineProps {
   }>
 }
 
-function getCompanyBackgroundColor(companyColor?: string): string {
-  if (!companyColor) return 'var(--background)'
-  // Converts "var(--pixel-yellow)" to "var(--pixel-yellow-bg)"
-  return companyColor.replace(')', '-bg)')
-}
-
 // Mobile timeline component - simple and clean
 function MobileTimeline({ items }: TimelineProps) {
   return (
@@ -43,39 +37,39 @@ function MobileTimeline({ items }: TimelineProps) {
         <div key={index} className="relative">
           <div className="flex items-center gap-3 mb-3">
             <div
-              className="w-3 h-3 rounded-full flex-shrink-0"
-              style={{ backgroundColor: item.companyColor || 'var(--pixel-blue)' }}
+              className="w-4 h-4 rounded-full flex-shrink-0 border-2 border-border"
+              style={{ backgroundColor: item.companyColor || '#91a3c2' }}
             />
-            <span className="text-sm text-muted-foreground font-pixel">
+            <span className="text-sm text-foreground opacity-60 font-pixel">
               {item.period}
             </span>
           </div>
           <Dialog>
             <DialogTrigger asChild>
               <div
-                className="p-4 transition-all duration-150 ease-in-out active:translate-y-1 active:[box-shadow:2px_2px_0px_0px_var(--border)] group border-[3px] border-border rounded-[4px] [box-shadow:4px_4px_0px_0px_var(--border)] cursor-pointer"
-                style={{ backgroundColor: 'var(--background)' }}
+                className="p-4 transition-all duration-150 ease-in-out active:translate-y-1 active:[box-shadow:2px_2px_0px_0px_#95bfff] dark:active:[box-shadow:2px_2px_0px_0px_#b19cd9] group border-[4px] border-border rounded-[0px] [box-shadow:6px_6px_0px_0px_#95bfff] dark:[box-shadow:6px_6px_0px_0px_#b19cd9] cursor-pointer"
+                style={{ backgroundColor: 'var(--secondary-background)' }}
                 onTouchStart={(e) => {
-                  e.currentTarget.style.backgroundColor = getCompanyBackgroundColor(item.companyColor) || 'var(--background)'
+                  e.currentTarget.style.borderColor = '#91a3c2'
                 }}
                 onTouchEnd={(e) => {
                   const target = e.currentTarget
                   setTimeout(() => {
                     if (target && target.style) {
-                      target.style.backgroundColor = 'var(--background)'
+                      target.style.borderColor = 'var(--border)'
                     }
-                  }, 1000000)
+                  }, 150)
                 }}
               >
                 <div>
-                  <h4 className="text-sm text-pixel-blue mb-1 font-pixel">
+                  <h4 className="text-sm mb-1 font-pixel font-bold text-[#91a3c2]">
                     {item.subtitle}
                   </h4>
-                  <h3 className="text-base font-semibold text-foreground mb-2 group-active:text-pixel-blue transition-colors duration-200 font-pixel">
+                  <h3 className="text-base font-semibold text-foreground mb-2 group-active:text-[#91a3c2] transition-colors duration-200 font-pixel">
                     {item.title}
                   </h3>
                 </div>
-                <div className="text-sm leading-relaxed text-muted-foreground group-active:text-foreground transition-colors duration-200">
+                <div className="text-sm leading-relaxed text-foreground opacity-80 group-active:opacity-100 transition-all duration-200">
                   {typeof item.description === 'string' ? (
                     <p className="m-0 whitespace-pre-line">{item.description}</p>
                   ) : (
@@ -87,7 +81,7 @@ function MobileTimeline({ items }: TimelineProps) {
                     {item.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 text-xs border-2 border-border bg-background"
+                        className="px-3 py-1.5 text-xs font-bold border-2 border-border bg-[#91a3c2] text-white [box-shadow:2px_2px_0px_0px_var(--border)]"
                         style={{ borderRadius: 0 }}
                       >
                         {tech}
@@ -97,7 +91,7 @@ function MobileTimeline({ items }: TimelineProps) {
                 )}
               </div>
             </DialogTrigger>
-            <DialogContent className="max-w-2xl border-[3px] border-border [box-shadow:6px_6px_0px_0px_var(--border)]" style={{ borderRadius: 0 }}>
+            <DialogContent className="max-w-2xl border-[3px] border-border data-[aesthetic=pixel]:[box-shadow:6px_6px_0px_0px_var(--border)]" style={{ borderRadius: 0 }}>
               <DialogHeader>
                 <DialogTitle className="text-2xl font-semibold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                   {item.title}
@@ -159,44 +153,59 @@ function DesktopTimeline({ items }: TimelineProps) {
     >
       {items.map((item, index) => (
         <TimelineItem key={index}>
-          <TimelineOppositeContent color="text-muted-foreground">
+          <TimelineOppositeContent
+            color="text-muted-foreground"
+            sx={{
+              color: 'var(--foreground)',
+              opacity: 0.6,
+              fontWeight: 'var(--font-weight-base)'
+            }}
+          >
             {item.period}
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot
               sx={{
-                bgcolor: item.companyColor || 'var(--pixel-blue)',
-                width: 12,
-                height: 12
+                bgcolor: item.companyColor || '#91a3c2',
+                width: 16,
+                height: 16,
+                border: '3px solid var(--border)',
+                boxShadow: '0 0 0 3px var(--background)'
               }}
             />
             {index < items.length - 1 && (
-              <TimelineConnector sx={{ bgcolor: item.companyColor || 'var(--pixel-blue)' }} />
+              <TimelineConnector
+                sx={{
+                  bgcolor: '#91a3c2',
+                  width: 4,
+                  border: '2px solid var(--border)',
+                  boxShadow: '2px 0 0 0 var(--background), -2px 0 0 0 var(--background)'
+                }}
+              />
             )}
           </TimelineSeparator>
           <TimelineContent>
             <Dialog>
               <DialogTrigger asChild>
                 <div
-                  className="p-4 mb-4 transition-all duration-150 ease-in-out hover:-translate-y-2 hover:[box-shadow:6px_6px_0px_0px_var(--border)] cursor-pointer group border-[3px] border-border rounded-[4px] [box-shadow:4px_4px_0px_0px_var(--border)]"
-                  style={{ backgroundColor: 'var(--background)' }}
+                  className="p-4 mb-4 transition-all duration-150 ease-in-out hover:-translate-y-2 hover:[box-shadow:8px_8px_0px_0px_#95bfff] dark:hover:[box-shadow:8px_8px_0px_0px_#b19cd9] cursor-pointer group border-[4px] border-border rounded-[0px] [box-shadow:6px_6px_0px_0px_#95bfff] dark:[box-shadow:6px_6px_0px_0px_#b19cd9]"
+                  style={{ backgroundColor: 'var(--secondary-background)' }}
                   onMouseEnter={(e) => {
-                    // On hover, update the background colour to the company colour (yellow for CBA, red for COLES, etc)
-                    e.currentTarget.style.backgroundColor = getCompanyBackgroundColor(item.companyColor) || 'var(--background)'
+                    e.currentTarget.style.borderColor = '#91a3c2'
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = 'var(--background)'
+                    e.currentTarget.style.borderColor = 'var(--border)'
                   }}
                 >
                   <div>
-                    <h4 className="text-base text-pixel-blue mb-0">
+                    <h4 className="text-base mb-0 font-bold text-[#91a3c2]">
                       {item.subtitle}
                     </h4>
-                    <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-pixel-blue transition-colors duration-200">
+                    <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-[#91a3c2] transition-colors duration-200">
                       {item.title}
                     </h3>
                   </div>
-                  <div className="text-base leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors duration-200">
+                  <div className="text-base leading-relaxed text-foreground opacity-80 group-hover:opacity-100 transition-all duration-200">
                     {typeof item.description === 'string' ? (
                       <p className="m-0 whitespace-pre-line">{item.description}</p>
                     ) : (
@@ -204,11 +213,11 @@ function DesktopTimeline({ items }: TimelineProps) {
                     )}
                   </div>
                   {item.technologies && item.technologies.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mt-3">
+                    <div className="flex flex-wrap gap-2 mt-4">
                       {item.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-2 py-1 text-xs border-2 border-border bg-background"
+                          className="px-3 py-1.5 text-xs font-bold border-2 border-border bg-[#91a3c2] text-white [box-shadow:2px_2px_0px_0px_var(--border)]"
                           style={{ borderRadius: 0 }}
                         >
                           {tech}
@@ -218,7 +227,7 @@ function DesktopTimeline({ items }: TimelineProps) {
                   )}
                 </div>
               </DialogTrigger>
-              <DialogContent className="max-w-2xl border-[3px] border-border [box-shadow:6px_6px_0px_0px_var(--border)]" style={{ borderRadius: 0 }}>
+              <DialogContent className="max-w-2xl border-[3px] border-border data-[aesthetic=pixel]:[box-shadow:6px_6px_0px_0px_var(--border)]" style={{ borderRadius: 0 }}>
                 <DialogHeader>
                   <DialogTitle className="text-2xl font-semibold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                     {item.title}

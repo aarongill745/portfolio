@@ -3,7 +3,41 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* Default brutal theme */
 :root {
+  --background: #fef9f3;
+  --secondary-background: #ffffff;
+  --foreground: #000000;
+  --main-foreground: #000000;
+  --main: #facc15;
+  --accent: #fb923c;
+  --border: #000000;
+  --ring: #facc15;
+  --overlay: rgba(255, 255, 255, 0.95);
+  --shadow: 6px 6px 0px 0px var(--border);
+  --border-width: 4px;
+  --button-border-width: 3px;
+  --shadow-offset: 6px;
+  --scrollbar-width: 20px;
+  --font-weight-base: 500;
+  --font-weight-heading: 700;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --secondary-background: #1a1a1a;
+  --foreground: #ffffff;
+  --main-foreground: #000000;
+  --main: #facc15;
+  --accent: #fb923c;
+  --border: #000000;
+  --ring: #facc15;
+  --overlay: rgba(0, 0, 0, 0.9);
+  --shadow: 6px 6px 0px 0px #b19cd9;
+}
+
+/* Pixel aesthetic overrides */
+[data-aesthetic="pixel"] {
   --background: #f8f9ff;
   --secondary-background: #ffffff;
   --foreground: #1a1a2e;
@@ -14,18 +48,28 @@
   --ring: #ffd700;
   --overlay: rgba(255, 255, 255, 0.9);
   --shadow: 2px 2px 0px 0px var(--border);
-  --pixel-blue: #3b7dd8;
-  --pixel-green: #66bb6a;
-  --pixel-yellow: #ffd700;
-  --pixel-red: #e53e3e;
-  --pixel-blue-bg: rgba(59, 125, 216, 0.1);
-  --pixel-green-bg: rgba(102, 187, 106, 0.1);
-  --pixel-yellow-bg: rgba(255, 215, 0, 0.15);
-  --pixel-red-bg: rgba(229, 62, 62, 0.1);
+  --border-width: 2px;
+  --button-border-width: 2px;
+  --shadow-offset: 2px;
+  --scrollbar-width: 16px;
+  --font-weight-base: 400;
+  --font-weight-heading: 400;
   --grid-color: rgba(45, 45, 68, 0.1);
+
+  /* Vibrant pixel mode colors */
+  --pixel-gold: #ffd700;
+  --pixel-purple: #9d4edd;
+  --pixel-cyan: #00d9ff;
+  --pixel-pink: #ff006e;
+  --pixel-orange: #ff6b35;
+
+  /* Company colors */
+  --pixel-yellow: #FFDB58;
+  --pixel-red: #FF4911;
+  --pixel-blue: #3300FF;
 }
 
-.dark {
+[data-aesthetic="pixel"].dark {
   --background: #0a0a0f;
   --secondary-background: #16141d;
   --foreground: #c7c5d1;
@@ -36,15 +80,19 @@
   --ring: #b8860b;
   --overlay: rgba(10, 10, 15, 0.85);
   --shadow: 2px 2px 0px 0px var(--border);
-  --pixel-blue: #4c5f7a;
-  --pixel-green: #5a6b4c;
-  --pixel-yellow: #b8860b;
-  --pixel-red: #7a4c4c;
-  --pixel-blue-bg: rgba(76, 95, 122, 0.2);
-  --pixel-green-bg: rgba(90, 107, 76, 0.2);
-  --pixel-yellow-bg: rgba(184, 134, 11, 0.25);
-  --pixel-red-bg: rgba(122, 76, 76, 0.2);
   --grid-color: rgba(42, 31, 45, 0.3);
+
+  /* Vibrant pixel mode colors (dark variants) */
+  --pixel-gold: #ffd700;
+  --pixel-purple: #c77dff;
+  --pixel-cyan: #4cc9f0;
+  --pixel-pink: #ff0a54;
+  --pixel-orange: #ff6b35;
+
+  /* Company colors */
+  --pixel-yellow: #FFDB58;
+  --pixel-red: #FF4911;
+  --pixel-blue: #3300FF;
 }
 
 @theme inline {
@@ -57,27 +105,51 @@
   --color-overlay: var(--overlay);
   --color-ring: var(--ring);
   --color-accent: var(--accent);
-  --color-pixel-blue: var(--pixel-blue);
-  --color-pixel-green: var(--pixel-green);
-  --color-pixel-yellow: var(--pixel-yellow);
-  --color-pixel-red: var(--pixel-red);
-  --color-pixel-blue-bg: var(--pixel-blue-bg);
-  --color-pixel-green-bg: var(--pixel-green-bg);
-  --color-pixel-yellow-bg: var(--pixel-yellow-bg);
-  --color-pixel-red-bg: var(--pixel-red-bg);
 
-  --spacing-boxShadowX: 2px;
-  --spacing-boxShadowY: 2px;
-  --spacing-reverseBoxShadowX: -2px;
-  --spacing-reverseBoxShadowY: -2px;
+  --spacing-boxShadowX: var(--shadow-offset);
+  --spacing-boxShadowY: var(--shadow-offset);
+  --spacing-reverseBoxShadowX: calc(-1 * var(--shadow-offset));
+  --spacing-reverseBoxShadowY: calc(-1 * var(--shadow-offset));
   --radius-base: 0px;
   --shadow-shadow: var(--shadow);
-  --font-weight-base: 400;
-  --font-weight-heading: 400;
+  --font-weight-base: var(--font-weight-base);
+  --font-weight-heading: var(--font-weight-heading);
 }
 
 body {
   background-color: var(--background);
+  font-weight: var(--font-weight-base);
+  transition: background-color 0.3s ease;
+}
+
+/* Typography adjustments for brutal aesthetic */
+[data-aesthetic="brutal"] h1,
+[data-aesthetic="brutal"] h2,
+[data-aesthetic="brutal"] h3 {
+  font-weight: 700;
+}
+
+[data-aesthetic="brutal"] p,
+[data-aesthetic="brutal"] span {
+  font-weight: 500;
+}
+
+/* Content sections use modern font only in brutal mode */
+[data-aesthetic="brutal"] .content-section {
+  font-family: var(--font-modern), system-ui, -apple-system, sans-serif;
+}
+
+/* Typography adjustments for pixel aesthetic */
+[data-aesthetic="pixel"] h1,
+[data-aesthetic="pixel"] h2,
+[data-aesthetic="pixel"] h3,
+[data-aesthetic="pixel"] p,
+[data-aesthetic="pixel"] span {
+  font-weight: 400;
+}
+
+/* Add grid background only for pixel aesthetic */
+[data-aesthetic="pixel"] body {
   background-image:
     linear-gradient(var(--grid-color) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
@@ -91,6 +163,10 @@ body {
   font-family: var(--font-pixel), 'Courier New', monospace;
 }
 
+.font-modern {
+  font-family: var(--font-modern), system-ui, -apple-system, sans-serif;
+}
+
 .pixel-art {
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
@@ -98,31 +174,48 @@ body {
 }
 
 .pixel-border {
-  border: 2px solid var(--border);
+  border: var(--border-width) solid var(--border);
   box-shadow: var(--shadow);
+  border-radius: 0px;
+}
+
+/* Rounded corners only for pixel aesthetic */
+[data-aesthetic="pixel"] .pixel-border {
   border-radius: 4px;
+}
+
+/* No shadow for brutal aesthetic */
+[data-aesthetic="brutal"] .pixel-border {
+  box-shadow: none;
 }
 
 .pixel-button {
   background: var(--main);
   color: var(--main-foreground);
-  border: 2px solid var(--border);
-  padding: 8px 16px;
+  border: var(--button-border-width) solid var(--border);
+  padding: 12px 24px;
   font-family: var(--font-pixel), monospace;
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
   transition: all 0.1s ease;
-  box-shadow: 2px 2px 0px var(--border);
+  box-shadow: calc(var(--shadow-offset) - 2px) calc(var(--shadow-offset) - 2px) 0px var(--border);
+  font-weight: var(--font-weight-heading);
 }
 
 .pixel-button:hover {
-  transform: translate(1px, 1px);
-  box-shadow: 1px 1px 0px var(--border);
+  transform: translate(calc(var(--shadow-offset) / 3), calc(var(--shadow-offset) / 3));
+  box-shadow: calc(var(--shadow-offset) / 3) calc(var(--shadow-offset) / 3) 0px var(--border);
 }
 
 .pixel-button:active {
-  transform: translate(2px, 2px);
+  transform: translate(var(--shadow-offset), var(--shadow-offset));
   box-shadow: none;
+}
+
+/* Smaller font and padding for pixel aesthetic */
+[data-aesthetic="pixel"] .pixel-button {
+  padding: 8px 16px;
+  font-size: 12px;
 }
 
 body {
@@ -137,17 +230,17 @@ html.dark .scrollbar {
 }
 
 body::-webkit-scrollbar {
-  width: 16px;
+  width: var(--scrollbar-width);
 }
 
 body::-webkit-scrollbar-track {
   background: var(--sb-track-color);
-  border: 2px solid var(--border);
+  border: var(--button-border-width) solid var(--border);
 }
 
 body::-webkit-scrollbar-thumb {
   background: var(--sb-thumb-color);
-  border: 2px solid var(--border);
+  border: var(--button-border-width) solid var(--border);
 }
 
 body::-webkit-scrollbar-thumb:hover {
@@ -158,4 +251,10 @@ body::-webkit-scrollbar-thumb:hover {
   body {
     scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
+}
+
+/* Hero section - brutalist mode uses single color */
+[data-aesthetic="brutal"] .hero-section h1,
+[data-aesthetic="brutal"] .hero-section p {
+  color: var(--foreground) !important;
 }

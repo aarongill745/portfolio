@@ -41,18 +41,15 @@ const TEXT_COLORS: Record<string, string> = {
 export default function Skills() {
   return (
     <div className="mb-16">
-      <h2 className="text-xl font-heading sm:text-2xl mb-2">Skills</h2>
-      <p className='text-xs mb-8'>Here are some things I know</p>
-
-
+      <h2 className="text-2xl sm:text-3xl mb-2 font-black">Here is the tech that I know</h2>
       {SKILLS.map((item, id) => {
         return (
           <div key={id}>
-            <h3 className="mb-4 text-lg font-heading sm:text-xl">
+            <h3 className="mb-4 text-xl sm:text-2xl font-bold">
               {item.field}
             </h3>
 
-            <div className="mb-10 flex flex-wrap gap-5">
+            <div className="mb-8 flex flex-wrap gap-5">
               {item.skills.map((skill, id) => {
                 return (
                   <TooltipProvider key={id}>

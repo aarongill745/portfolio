@@ -2,6 +2,7 @@
 import Experience from '@/components/sections/experience'
 import Skills from '@/components/sections/skills'
 import { ThemeSwitcher } from '@/components/theme-switcher'
+import { AestheticSwitcher } from '@/components/aesthetic-switcher'
 import { HeroSection } from '@/components/hero-section'
 import { IntroSection } from '@/components/intro-section'
 import { useTheme } from 'next-themes'
@@ -58,7 +59,8 @@ export default function Home() {
       <div className='flex flex-row justify-center px-4 lg:px-8'>
         <div className="font-pixel w-full max-w-2xl lg:max-w-3xl">
           <div>
-            <div className='flex justify-end pb-4'>
+            <div className='flex justify-end gap-4 pb-4'>
+              <AestheticSwitcher/>
               <ThemeSwitcher/>
             </div>
             <HeroSection />
@@ -66,10 +68,10 @@ export default function Home() {
 
           <IntroSection />
 
-          <div className="mt-8">
+          <div className="mt-8 content-section">
             <Skills />
           </div>
-          <div className='pixel-border bg-secondary-background p-6 mb-6'>
+          <div className='pixel-border bg-secondary-background p-6 mb-6 content-section'>
             <Experience />
           </div>
         </div>
