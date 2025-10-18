@@ -10,7 +10,7 @@ const PAST_ROLES: {
 }[] = [
   {
     company: 'Commonwealth Bank of Australia',
-    role: 'Software Engineer - AI Acceleration',
+    role: 'Software Engineer - Virtual Relationship Manager',
     description:
       'Working on real time monitoring and analytics of AI agents.',
     startDate: 'Aug 2025',
@@ -18,9 +18,8 @@ const PAST_ROLES: {
     companyColor: 'var(--pixel-yellow)',
     technologies: ['NextJS', 'TypeScript', 'Python', 'AWS', 'Kafka'],
     detailedResponsibilities: [
-      'Developing real-time monitoring dashboards for AI agent performance tracking',
+      'Developing real-time monitoring for AI agent performance tracking',
       'Building analytics pipelines to process and visualize agent interaction data',
-      'Collaborating with ML teams to integrate monitoring into AI workflows',
       'Implementing automated alerting systems for agent anomaly detection'
     ]
   },

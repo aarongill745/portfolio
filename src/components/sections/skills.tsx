@@ -58,7 +58,7 @@ export default function Skills() {
                         <skill.icon className="h-8 w-8" title="" />
                       </TooltipTrigger>
                       <TooltipContent
-                        className={`${TECH_COLORS[skill.skill] || 'bg-main'} ${TEXT_COLORS[skill.skill] || 'text-white'} border-2 border-black font-pixel uppercase tracking-wider px-4 py-2`}
+                        className={`${TECH_COLORS[skill.skill] || 'bg-main'} ${TEXT_COLORS[skill.skill] || 'text-white'} border-[2px] border-border font-pixel uppercase tracking-wider px-4 py-2`}
                       >
                         {skill.skill}
                       </TooltipContent>

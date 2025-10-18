@@ -3,7 +3,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Default brutal theme */
+/**
+ * Theme CSS Variables (Generated)
+ *
+ * These variables are defined in src/lib/theme-config.ts
+ * DO NOT manually edit these values here - update the theme config instead.
+ */
+
+/* Default brutal light theme */
 :root {
   --background: #fef9f3;
   --secondary-background: #ffffff;
@@ -14,22 +21,23 @@
   --border: #000000;
   --ring: #facc15;
   --overlay: rgba(255, 255, 255, 0.95);
-  --shadow: 6px 6px 0px 0px var(--border);
-  --border-width: 4px;
-  --button-border-width: 3px;
-  --shadow-offset: 6px;
-  --scrollbar-width: 20px;
-  --font-weight-base: 500;
-  --font-weight-heading: 700;
-  --dot-radius: 50%;
   --timeline-connector: #ffffff;
   --timeline-border: #000000;
   --company-title-color: #91a3c2;
   --skill-bg: #facc15;
   --skill-text: #000000;
   --skill-border: #000000;
+  --border-width: 4px;
+  --button-border-width: 3px;
+  --shadow-offset: 6px;
+  --scrollbar-width: 20px;
+  --shadow: 6px 6px 0px 0px var(--border);
+  --font-weight-base: 500;
+  --font-weight-heading: 700;
+  --dot-radius: 50%;
 }
 
+/* Brutal dark theme */
 .dark {
   --background: #0a0a0a;
   --secondary-background: #1a1a1a;
@@ -40,16 +48,23 @@
   --border: #000000;
   --ring: #facc15;
   --overlay: rgba(0, 0, 0, 0.9);
-  --shadow: 6px 6px 0px 0px #b19cd9;
   --timeline-connector: #ffffff;
   --timeline-border: #ffffff;
   --company-title-color: #ffffff;
   --skill-bg: #000000;
   --skill-text: #ffffff;
   --skill-border: #ffffff;
+  --border-width: 4px;
+  --button-border-width: 3px;
+  --shadow-offset: 6px;
+  --scrollbar-width: 20px;
+  --shadow: 6px 6px 0px 0px var(--border);
+  --font-weight-base: 500;
+  --font-weight-heading: 700;
+  --dot-radius: 50%;
 }
 
-/* Pixel aesthetic overrides */
+/* Pixel light theme */
 [data-aesthetic="pixel"] {
   --background: #f8f9ff;
   --secondary-background: #ffffff;
@@ -60,30 +75,33 @@
   --border: #2d2d44;
   --ring: #ffd700;
   --overlay: rgba(255, 255, 255, 0.9);
-  --shadow: 2px 2px 0px 0px var(--border);
-  --border-width: 2px;
-  --button-border-width: 2px;
-  --shadow-offset: 2px;
-  --scrollbar-width: 16px;
-  --font-weight-base: 400;
-  --font-weight-heading: 400;
-  --grid-color: rgba(45, 45, 68, 0.1);
-  --dot-radius: 0%;
   --timeline-connector: #91a3c2;
-
-  /* Vibrant pixel mode colors */
+  --timeline-border: #2d2d44;
+  --company-title-color: #91a3c2;
+  --skill-bg: #ffd700;
+  --skill-text: #000000;
+  --skill-border: #2d2d44;
+  --grid-color: rgba(45, 45, 68, 0.1);
   --pixel-gold: #ffd700;
   --pixel-purple: #9d4edd;
   --pixel-cyan: #00d9ff;
   --pixel-pink: #ff006e;
   --pixel-orange: #ff6b35;
-
-  /* Company colors */
   --pixel-yellow: #FFDB58;
   --pixel-red: #FF4911;
   --pixel-blue: #3300FF;
+  --border-width: 2px;
+  --button-border-width: 2px;
+  --shadow-offset: 2px;
+  --scrollbar-width: 16px;
+  --shadow: 2px 2px 0px 0px var(--border);
+  --font-weight-base: 400;
+  --font-weight-heading: 400;
+  --dot-radius: 0%;
+  --image-rendering: pixelated;
 }
 
+/* Pixel dark theme */
 [data-aesthetic="pixel"].dark {
   --background: #0a0a0f;
   --secondary-background: #16141d;
@@ -94,23 +112,40 @@
   --border: #2a1f2d;
   --ring: #b8860b;
   --overlay: rgba(10, 10, 15, 0.85);
-  --shadow: 2px 2px 0px 0px var(--border);
+  --timeline-connector: #91a3c2;
+  --timeline-border: #2a1f2d;
+  --company-title-color: #c7c5d1;
+  --skill-bg: #2a1f2d;
+  --skill-text: #c7c5d1;
+  --skill-border: #c7c5d1;
   --grid-color: rgba(42, 31, 45, 0.3);
-
-  /* Vibrant pixel mode colors (dark variants) */
   --pixel-gold: #ffd700;
   --pixel-purple: #c77dff;
   --pixel-cyan: #4cc9f0;
   --pixel-pink: #ff0a54;
   --pixel-orange: #ff6b35;
-
-  /* Company colors */
   --pixel-yellow: #FFDB58;
   --pixel-red: #FF4911;
   --pixel-blue: #3300FF;
+  --border-width: 2px;
+  --button-border-width: 2px;
+  --shadow-offset: 2px;
+  --scrollbar-width: 16px;
+  --shadow: 2px 2px 0px 0px var(--border);
+  --font-weight-base: 400;
+  --font-weight-heading: 400;
+  --dot-radius: 0%;
+  --image-rendering: pixelated;
 }
 
+/**
+ * Tailwind Theme Extension
+ *
+ * Map CSS variables to Tailwind utilities for seamless integration
+ * All values reference our theme system variables
+ */
 @theme inline {
+  /* Color tokens */
   --color-main: var(--main);
   --color-background: var(--background);
   --color-secondary-background: var(--secondary-background);
@@ -121,12 +156,31 @@
   --color-ring: var(--ring);
   --color-accent: var(--accent);
 
+  /* Timeline colors */
+  --color-timeline-connector: var(--timeline-connector);
+  --color-timeline-border: var(--timeline-border);
+  --color-company-title: var(--company-title-color);
+
+  /* Skill badge colors */
+  --color-skill-bg: var(--skill-bg);
+  --color-skill-text: var(--skill-text);
+  --color-skill-border: var(--skill-border);
+
+  /* Spacing tokens */
   --spacing-boxShadowX: var(--shadow-offset);
   --spacing-boxShadowY: var(--shadow-offset);
   --spacing-reverseBoxShadowX: calc(-1 * var(--shadow-offset));
   --spacing-reverseBoxShadowY: calc(-1 * var(--shadow-offset));
-  --radius-base: 0px;
+  --spacing-border-width: var(--border-width);
+  --spacing-button-border-width: var(--button-border-width);
+
+  /* Border radius tokens */
+  --radius-base: var(--dot-radius);
+
+  /* Shadow tokens */
   --shadow-shadow: var(--shadow);
+
+  /* Font weight tokens */
   --font-weight-base: var(--font-weight-base);
   --font-weight-heading: var(--font-weight-heading);
 }
@@ -137,43 +191,61 @@ body {
   transition: background-color 0.3s ease;
 }
 
-/* Typography adjustments for brutal aesthetic */
+/**
+ * Typography System
+ *
+ * Font weights and families adapt based on aesthetic mode
+ */
+
+/* Brutal aesthetic - bold, modern typography */
 [data-aesthetic="brutal"] h1,
 [data-aesthetic="brutal"] h2,
 [data-aesthetic="brutal"] h3 {
-  font-weight: 700;
+  font-weight: var(--font-weight-heading);
 }
 
 [data-aesthetic="brutal"] p,
 [data-aesthetic="brutal"] span {
-  font-weight: 500;
+  font-weight: var(--font-weight-base);
 }
 
-/* Content sections use modern font only in brutal mode */
 [data-aesthetic="brutal"] .content-section {
   font-family: var(--font-modern), system-ui, -apple-system, sans-serif;
 }
 
-/* Typography adjustments for pixel aesthetic */
+/* Pixel aesthetic - uniform retro weight */
 [data-aesthetic="pixel"] h1,
 [data-aesthetic="pixel"] h2,
 [data-aesthetic="pixel"] h3,
 [data-aesthetic="pixel"] p,
 [data-aesthetic="pixel"] span {
-  font-weight: 400;
+  font-weight: var(--font-weight-base);
 }
 
-/* Add grid background only for pixel aesthetic */
+/**
+ * Visual Effects
+ *
+ * Aesthetic-specific visual treatments
+ */
+
+/* Pixel aesthetic - grid background and crisp rendering */
 [data-aesthetic="pixel"] body {
   background-image:
     linear-gradient(var(--grid-color) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
   background-size: 20px 20px;
-  image-rendering: pixelated;
+  image-rendering: var(--image-rendering);
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
 }
 
+/**
+ * Utility Classes
+ *
+ * Reusable class utilities that adapt to theme context
+ */
+
+/* Font utilities */
 .font-pixel {
   font-family: var(--font-pixel), 'Courier New', monospace;
 }
@@ -182,28 +254,32 @@ body {
   font-family: var(--font-modern), system-ui, -apple-system, sans-serif;
 }
 
+/* Image rendering utilities */
 .pixel-art {
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;
 }
 
+/* Adaptive border component - responds to theme mode */
 .pixel-border {
   border: var(--border-width) solid var(--border);
   box-shadow: var(--shadow);
-  border-radius: 0px;
+  border-radius: var(--radius-base, 0px);
 }
 
-/* Rounded corners only for pixel aesthetic */
+/* Pixel aesthetic - rounded corners */
 [data-aesthetic="pixel"] .pixel-border {
   border-radius: 4px;
 }
 
-/* No shadow for brutal aesthetic */
+/* Brutal aesthetic - no shadow, sharp corners */
 [data-aesthetic="brutal"] .pixel-border {
   box-shadow: none;
+  border-radius: 0px;
 }
 
+/* Adaptive button component */
 .pixel-button {
   background: var(--main);
   color: var(--main-foreground);
@@ -215,6 +291,7 @@ body {
   transition: all 0.1s ease;
   box-shadow: calc(var(--shadow-offset) - 2px) calc(var(--shadow-offset) - 2px) 0px var(--border);
   font-weight: var(--font-weight-heading);
+  cursor: pointer;
 }
 
 .pixel-button:hover {
@@ -227,19 +304,18 @@ body {
   box-shadow: none;
 }
 
-/* Smaller font and padding for pixel aesthetic */
+/* Pixel aesthetic - smaller, crisper button */
 [data-aesthetic="pixel"] .pixel-button {
   padding: 8px 16px;
   font-size: 12px;
 }
 
+/**
+ * Scrollbar Styling
+ *
+ * Custom scrollbar that adapts to theme
+ */
 body {
-  --sb-track-color: var(--secondary-background);
-  --sb-thumb-color: var(--main);
-}
-
-html.dark body,
-html.dark .scrollbar {
   --sb-track-color: var(--secondary-background);
   --sb-thumb-color: var(--main);
 }
@@ -262,13 +338,18 @@ body::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
 }
 
+/* Firefox scrollbar support */
 @supports not selector(::-webkit-scrollbar) {
   body {
     scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
 }
 
-/* Hero section - brutalist mode uses single color */
+/**
+ * Component-Specific Overrides
+ */
+
+/* Hero section - brutal aesthetic uses uniform foreground color */
 [data-aesthetic="brutal"] .hero-section h1,
 [data-aesthetic="brutal"] .hero-section p {
   color: var(--foreground) !important;
