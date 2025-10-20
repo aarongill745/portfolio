@@ -1,99 +1,23 @@
-'use client'
 import Experience from '@/components/sections/experience'
 import Skills from '@/components/sections/skills'
-import { ThemeSwitcher } from '@/components/theme-switcher'
-import { AestheticSwitcher } from '@/components/aesthetic-switcher'
-import { HeroSection } from '@/components/hero-section'
-import { IntroSection } from '@/components/intro-section'
-import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+import FeaturedBlogs from '@/components/sections/featured-blogs'
+import { getFeaturedPosts } from '@/lib/blog'
+import ClientHome from '@/components/client-home'
 
 export default function Home() {
-  const { theme } = useTheme()
-  const [mounted, setMounted] = useState(false)
-
-  // Avoid hydration mismatch by only rendering sprites after mount
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-  const leftSprites = [
-    { src: '/portfolio/images/sprites/dark/sideSprites/left1.png', top: '0%', right: '20%' },
-    { src: '/portfolio/images/sprites/dark/sideSprites/left2.png', top: '40%', right: '10%' },
-    { src: '/portfolio/images/sprites/dark/sideSprites/left3.png', top: '80%', right: '0%' },
-  ]
-
-  const rightSprites = [
-    { src: '/portfolio/images/sprites/dark/sideSprites/right1.png', top: '10%', left: '20%' },
-    { src: '/portfolio/images/sprites/dark/sideSprites/right2.png', top: '50%', left: '10%' },
-    { src: '/portfolio/images/sprites/dark/sideSprites/right3.png', top: '90%', left: '0%' },
-  ]
-
-  const getThemedSpritePath = (spritePath: string, currentTheme: string | undefined): string => {
-    // Default to dark if theme is undefined or 'system'
-    if (currentTheme === 'light') {
-      return spritePath.replace('/dark/', '/light/')
-    }
-    return spritePath
-  }
-
+  // Fetch featured posts at build time (server-side)
+  const featuredPosts = getFeaturedPosts().slice(0, 3)
   return (
-    <div className='grid grid-cols-1 xl:grid-cols-[1fr_750px_1fr] w-full'>
-      {/* Left container - hidden on mobile */}
-      <div className='hidden xl:block bg-primary relative overflow-visible z-10'>
-        {mounted && leftSprites.map((sprite) => (
-          <img
-            key={sprite.src}
-            src={getThemedSpritePath(sprite.src, theme)}
-            alt=""
-            className='pixel-art absolute'
-            style={{
-              top: sprite.top,
-              right: sprite.right,
-              width: '400px',
-            }}
-          />
-        ))}
+    <ClientHome featuredPosts={featuredPosts}>
+      <div className="mt-8 content-section">
+        <Skills />
       </div>
 
-      {/* Center content */}
-      <div className='flex flex-row justify-center px-4 lg:px-8'>
-        <div className="font-pixel w-full max-w-2xl lg:max-w-3xl">
-          <div>
-            <div className='flex justify-end gap-4 pb-4'>
-              <AestheticSwitcher/>
-              <ThemeSwitcher/>
-            </div>
-            <HeroSection />
-          </div>
+      <FeaturedBlogs posts={featuredPosts} />
 
-          <IntroSection />
-
-          <div className="mt-8 content-section">
-            <Skills />
-          </div>
-          <div className='pixel-border bg-secondary-background p-6 mb-6 content-section'>
-            <Experience />
-          </div>
-        </div>
+      <div className='pixel-border bg-secondary-background p-6 mb-6 content-section'>
+        <Experience />
       </div>
-
-      {/* Right container - hidden on mobile */}
-      <div className='hidden xl:block bg-primary relative overflow-visible z-10'>
-        {mounted && rightSprites.map((sprite) => (
-          <img
-            key={sprite.src + '-right'}
-            src={getThemedSpritePath(sprite.src, theme)}
-            alt=""
-            className='pixel-art absolute'
-            style={{
-              top: sprite.top,
-              left: sprite.left,
-              width: '400px',
-              transform: 'scaleX(-1)',
-            }}
-          />
-        ))}
-      </div>
-    </div>
+    </ClientHome>
   )
 }
