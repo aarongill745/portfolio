@@ -41,12 +41,12 @@ const TEXT_COLORS: Record<string, string> = {
 export default function Skills() {
   return (
     <div className="mb-16">
-      <h2 className="text-2xl sm:text-3xl mb-2 font-black skills-heading">Tech that I use</h2>
+      <h2 className="text-2ixl sm:text-3xl mb-2 font-black [[data-aesthetic=pixel]_&]:tracking-tighter [[data-aesthetic=pixel]_&]:[word-spacing:-0.4em]">Tech that I use</h2>
       <div className="border-t-[2px] border-foreground mb-5"></div>
       {SKILLS.map((item, id) => {
         return (
           <div key={id}>
-            <h3 className="mb-4 text-lg sm:text-xl font-bold">
+            <h3 className="mb-4 text-lg sm:text-xl font-bold [[data-aesthetic=pixel]_&]:tracking-tighter">
               {item.field}
             </h3>
             <div className="mb-8 flex flex-wrap gap-5">
