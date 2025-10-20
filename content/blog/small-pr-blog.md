@@ -1,63 +1,84 @@
 ---
-title: "The Art of the Small Pull Request: Ship Faster by Doing Less"
+title: "Pull requests are too big these days"
 date: "2025-10-20"
-excerpt: "Large, overcomplicated pull requests have become the silent productivity killer in modern development teams. Learn how to ship faster by breaking work into small, focused, reviewable pieces."
-featured: false
+excerpt: "Large PRs kill productivity. You can't deploy something that's sitting in review, right?"
+featured: true
 ---
 
-# The Art of the Small Pull Request: Ship Faster by Doing Less
+# You should be breaking down your work
 
-We've all been there. You open a pull request notification and your heart sinks. 47 files changed. 2,847 lines added. 1,203 lines deleted. You know this review is going to consume your entire afternoon, and even then, you'll probably miss something important buried in the noise.
+I often find myself stuck in coding paralysis when I'm tasked with implementing large, full-stack features. There's just so much that needs to be done, and you don't know where to start.
 
-Large, overcomplicated pull requests have become the silent productivity killer in modern development teams. They sit in review queues for days, accumulate merge conflicts, and create bottlenecks that slow down entire projects. But there's a better way.
+Anecdotally, I find breaking work down into smaller, isolated chunks help me work much faster, and happier (I'll explain this part later).
 
-## Core Concepts: Getting Back to Basics
+When working on any task, it's common to see that **1 ticket = everything in 1 pull request**. This means 700+ lines of changes, made across the entire stack of a service, in one PR, a package of UI changes + Backend changes + Infra changes. 
 
-Before we dive into the solution, let's revisit two fundamental principles that should guide how we structure our work:
+I find this type of change becoming more and more common, especially with AI coding tools like Claude Code and Codex.
 
-**Single Responsibility** isn't just for classes and functions. Each pull request should have one clear purpose, one reason to exist. When a PR tries to do too many things at once, it becomes exponentially harder to review, test, and reason about.
+---
 
-**Keeping It Simple** means resisting the urge to bundle "just one more thing" into your current branch. That CSS tweak you noticed while building the feature? That refactoring that would make the code cleaner? These are all worthy improvements, but they don't belong in the same PR as your core changes.
+## Reviews
+One of the biggest blockers in shipping features in software engineering is reviews. It doesn't matter if you're reviewing, or waiting for your code to get reviewed.
 
-## The Ideal: Small, Single-Purpose Feature Branches
+The main perpetrator of long wait times is usually size. A lot of pull requests are just way too long, and there's just way too many features. 
 
-Imagine a world where every pull request you review takes 10-15 minutes instead of hours. Where you can confidently approve changes because the scope is narrow enough to fully understand. Where code ships to production daily instead of weekly because reviews don't create bottlenecks.
+Small PRs (< 20 lines) get approved almost instantly, while your larger, 1200+ line monstrosity sits there for 2 sprints while your senior pretends like it doesn't exist 
 
-This isn't a fantasy. It's what happens when teams commit to small, single-purpose feature branches. The benefits compound quickly: reviews become faster and more thorough, feedback loops tighten, and changes make it to production while the context is still fresh in everyone's mind.
+If it's smaller, simpler PRs get reviewed and approved faster, I should probably be making my PRs are simple and small as possible.
 
-## How to Do It: A Practical Approach
+## Coding principles
 
-The key to small PRs is thinking differently about how you break down work. Instead of organizing around features, organize around components and responsibilities.
+Computer science students are hammered constantly about the many principles of how they should be writing their code. 
 
-**Start by identifying the distinct pieces** of work within your ticket. A typical feature might include database changes, API endpoints, business logic, frontend components, and integration code. Each of these is a candidate for its own pull request.
+The one I want to talk about is **single responsibility**.
 
-**Modularize your approach** so that each PR pertains to a particular implementation detail, not an entire feature. This might feel counterintuitive at first—after all, you're used to thinking in terms of complete, user-facing features. But remember: your users care about working features, not the number of PRs it took to build them.
+### Single Responsibility
+"Let me just add this bug fix real quick", "I'll just refactor this over here too". 
 
-The magic happens when you can merge foundational work that doesn't yet expose any user-facing changes. Your backend PR might add endpoints that nothing calls yet. That's fine! It's tested, reviewed, and safe. When your frontend PR lands next, it simply connects to something that's already there.
+Keeping it simple is about restricting scope. I said that complexity is what makes your Pull Requests get avoided. Simplicity is about lowering the intellectual toll someone needs to burden in order to understand what you've done.
 
-## A Real-World Example
+If you find a bug, just make another pull request with a fix for it. If it's a small change, your team will fight each other to review it and get that green box.
 
-Let's make this concrete. You've picked up a ticket to implement a new user profile feature. The requirements include a backend API to store and retrieve profile data, a frontend form to edit profiles, and the integration between them.
+---
 
-The traditional approach? One massive pull request with everything. Backend models, API routes, frontend components, styling, tests for everything—all tangled together in a web of dependencies that's nearly impossible to review effectively.
+## Example
 
-The better approach? Split it into three focused pull requests:
+Imagine you're asked to implement a feature, a ticket that says "Show a user's blog post history" (Welcome to the real world).
 
-**PR #1: Frontend + UI Testing**  
-This PR contains the profile form component, all the styling, and UI tests that verify the component renders correctly and handles user input. It might even use mock data or a temporary state management solution. The reviewer can focus entirely on the user experience, accessibility, and visual correctness without getting distracted by backend concerns.
+The ticket is full stack, and the requirements look something like:
+1. Create an API that retrieves a user's blog history
+2. Show that history on the frontend
 
-**PR #2: Backend + Unit Testing**  
-Here you implement the data model, API endpoints, validation logic, and comprehensive unit tests. The reviewer can focus on data integrity, API design, security considerations, and test coverage. No frontend code to wade through.
+This is full-stack work: a web API on the backend, a web component on the frontend, and the logic connecting the two.
 
-**PR #3: Connection Between the Two**  
-The final PR is surprisingly small—it wires the frontend component to call the real backend endpoints and handles the integration. Because both pieces are already reviewed and merged, this PR is focused purely on the integration logic and any error handling specific to the connection.
+### How would I do it? Breaking down the breaking down
 
-Each pull request is isolated and has a single responsibility. This makes reviews dramatically simpler because the scope is localized. Your reviewers can load the entire context into their heads without cognitive overload. They can spot issues more easily because they're not drowning in unrelated changes.
+Split the work into three separate items, each with a single responsibility and its own pull request.
 
-## The Ripple Effects
+**Item 1: Write an API that gets the user's blog history**
+* Backend only
+* Logic to retrieve blog history
+* Unit tests (can't forget those)
 
-Once you start working this way, you'll notice secondary benefits you didn't expect. Merge conflicts become rare because your branches are short-lived. Debugging becomes easier because each merged PR is a clear checkpoint you can reason about. Onboarding new team members becomes smoother because they can learn from a history of small, focused changes rather than trying to decipher monolithic commits.
+**Item 2: Create a frontend component that shows a user's blog history**
+* Frontend only ticket
+* Probably stubbed API responses based on the backend schema
+* UI tests
 
-Most importantly, you'll ship faster. Not because you're working faster, but because you've removed the friction from your process. Small PRs mean quick reviews, which means code flowing to production in a steady stream rather than in risky, infrequent batches.
+**Item 3: Connect frontend with backend**
+* Make the frontend actually call the backend instead of using stubbed data
 
-The art of the small pull request isn't about doing less work—it's about organizing that work in a way that respects everyone's time and cognitive capacity. Give it a try on your next feature. Your reviewers will thank you.
+Here's how the flow goes:
+* Complete item 1, have an engineer familiar with the backend review it
+* Complete item 2, have an engineer familiar with the frontend review it
+* Complete item 3, which connects the work done in items 1 and 2
+
+Items 1 and 2 contain the core logic, however, they're separated such that you don't need deep knowledge of the entire system to understand how everything is pieced together. That's all in item 3, which is intentionally designed to be as small as possible.
+
+---
+
+## It also just feels better
+
+Merging pull requests, moving tickets on Jira to **Done**, having green bubbles on GitHub, these are good feelings as a developer. It also makes it feel like you're having consistent impact (which you are).
+
+Working on the same ticket for multiple days because of scope and feature creep does not feel good.
