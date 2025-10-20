@@ -40,7 +40,7 @@ function MobileTimeline({ items }: TimelineProps) {
               className="w-4 h-4 flex-shrink-0 border-[2px] border-timeline-border [html[data-aesthetic=pixel]_&]:rounded-none [html[data-aesthetic=brutal]_&]:rounded-full [html[data-aesthetic=pixel].dark_&]:!bg-[var(--company-title-color)]"
               style={{ backgroundColor: item.companyColor || 'var(--company-title-color)' }}
             />
-            <span className="text-sm text-foreground opacity-60 font-pixel">
+            <span className="text-sm text-foreground opacity-60">
               {item.period}
             </span>
           </div>
@@ -54,10 +54,10 @@ function MobileTimeline({ items }: TimelineProps) {
                 }}
               >
                 <div>
-                  <h4 className="text-sm mb-1 font-pixel font-bold" style={{ color: 'var(--company-title-color)' }}>
+                  <h4 className="text-sm mb-1 font-bold" style={{ color: 'var(--company-title-color)' }}>
                     {item.subtitle}
                   </h4>
-                  <h3 className="text-base font-semibold text-foreground mb-2 font-pixel">
+                  <h3 className="text-base font-semibold text-foreground mb-2">
                     {item.title}
                   </h3>
                 </div>
