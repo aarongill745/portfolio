@@ -42,7 +42,7 @@ export default function Links() {
       {/* Resume button */}
       <a
         target="_blank"
-        href={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/AaronGillResume.pdf`}
+        href="/AaronGillResume.pdf"
         rel="noopener noreferrer"
         className="pixel-border bg-pixel-blue hover:bg-white dark:hover:bg-purple-400 p-3 transition-colors duration-100 flex items-center gap-2"
         aria-label="View Resume"
