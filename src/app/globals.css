@@ -354,3 +354,16 @@ body::-webkit-scrollbar-thumb:hover {
 [data-aesthetic="brutal"] .hero-section p {
   color: var(--foreground) !important;
 }
+
+/* Tooltip - brutal aesthetic uses sharp rectangles and modern font */
+[data-aesthetic="brutal"] [data-slot="tooltip-content"] {
+  border-radius: 0px !important;
+  font-family: var(--font-modern), system-ui, -apple-system, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+}
+
+/* Tooltip - pixel aesthetic uses slight rounding */
+[data-aesthetic="pixel"] [data-slot="tooltip-content"] {
+  border-radius: 4px !important;
+}

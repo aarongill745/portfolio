@@ -5,6 +5,7 @@ import {
   SiLinkedin,
   SiMedium,
 } from '@icons-pack/react-simple-icons'
+import { FileText } from 'lucide-react'
 
 export default function Links() {
   const links: { icon: IconType; href: string }[] = [
@@ -32,6 +33,16 @@ export default function Links() {
           </a>
         )
       })}
+
+      {/* Resume button */}
+      <a
+        target="_blank"
+        href="/AaronGillResume.pdf"
+        className="pixel-border bg-pixel-blue hover:bg-white dark:hover:bg-purple-400 p-3 transition-colors duration-100"
+        aria-label="View Resume"
+      >
+        <FileText size={16} className="text-main-foreground" />
+      </a>
     </div>
   )
 }
