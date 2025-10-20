@@ -384,6 +384,8 @@ body::-webkit-scrollbar-thumb:hover {
   font-family: var(--font-modern), system-ui, -apple-system, sans-serif !important;
   font-size: 1.25rem !important;
   line-height: 1.6 !important;
+  word-spacing: 0.15em !important; /* Increase spacing between words for brutal aesthetic */
+  letter-spacing: 0.05em !important; /* Increase spacing between letters for brutal aesthetic */
 }
 
 /* Links - brutal aesthetic uses modern font */
@@ -404,4 +406,17 @@ body::-webkit-scrollbar-thumb:hover {
 /* Tooltip - pixel aesthetic uses slight rounding */
 [data-aesthetic="pixel"] [data-slot="tooltip-content"] {
   border-radius: 4px !important;
+}
+
+/* Skills section - pixel aesthetic compensates for optical size of monospace font */
+[data-aesthetic="pixel"] .skills-heading {
+  font-size: 1.25rem !important; /* 20px - much smaller for pixel aesthetic */
+  word-spacing: -0.3em !important; /* Tighten spacing between words significantly */
+}
+
+@media (min-width: 640px) {
+  [data-aesthetic="pixel"] .skills-heading {
+    font-size: 1.5rem !important; /* 24px - much smaller for pixel aesthetic */
+    word-spacing: -0.3em !important; /* Tighten spacing between words significantly */
+  }
 }

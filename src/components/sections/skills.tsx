@@ -41,14 +41,14 @@ const TEXT_COLORS: Record<string, string> = {
 export default function Skills() {
   return (
     <div className="mb-16">
-      <h2 className="text-2xl sm:text-3xl mb-2 font-black">Tech that I use</h2>
+      <h2 className="text-2xl sm:text-3xl mb-2 font-black skills-heading">Tech that I use</h2>
+      <div className="border-t-[2px] border-foreground mb-5"></div>
       {SKILLS.map((item, id) => {
         return (
           <div key={id}>
-            <h3 className="mb-4 text-xl sm:text-2xl font-bold">
+            <h3 className="mb-4 text-lg sm:text-xl font-bold">
               {item.field}
             </h3>
-
             <div className="mb-8 flex flex-wrap gap-5">
               {item.skills.map((skill, id) => {
                 return (
@@ -58,7 +58,7 @@ export default function Skills() {
                         <skill.icon className="h-8 w-8" title="" />
                       </TooltipTrigger>
                       <TooltipContent
-                        className={`${TECH_COLORS[skill.skill] || 'bg-main'} ${TEXT_COLORS[skill.skill] || 'text-white'} border-[2px] border-border font-pixel uppercase tracking-wider px-4 py-2`}
+                        className={`${TECH_COLORS[skill.skill] || 'bg-main'} ${TEXT_COLORS[skill.skill] || 'text-white'} border-[2px] border-skill-border font-pixel uppercase tracking-wider px-4 py-2`}
                       >
                         {skill.skill}
                       </TooltipContent>
