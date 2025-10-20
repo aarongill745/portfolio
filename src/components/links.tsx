@@ -6,6 +6,7 @@ import {
   SiMedium,
 } from '@icons-pack/react-simple-icons'
 import { FileText } from 'lucide-react'
+import { RESUME } from '@/data/resume'
 
 export default function Links() {
   const links: { icon: IconType; href: string; label: string }[] = [
@@ -42,7 +43,7 @@ export default function Links() {
       {/* Resume button */}
       <a
         target="_blank"
-        href="/AaronGillResume.pdf"
+        href={RESUME.path}
         rel="noopener noreferrer"
         className="pixel-border bg-pixel-blue hover:bg-white dark:hover:bg-purple-400 p-3 transition-colors duration-100 flex items-center gap-2"
         aria-label="View Resume"

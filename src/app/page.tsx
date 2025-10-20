@@ -9,13 +9,15 @@ export default function Home() {
   const featuredPosts = getFeaturedPosts().slice(0, 3)
   return (
     <ClientHome featuredPosts={featuredPosts}>
-      <div className="mt-8 content-section">
+      <div className="mt-8 content-section border-dashed-long p-6 rounded-[4px]">
         <Skills />
       </div>
 
-      <FeaturedBlogs posts={featuredPosts} />
+      <div className="mt-8">
+        <FeaturedBlogs posts={featuredPosts} />
+      </div>
 
-      <div className='pixel-border bg-secondary-background p-6 mb-6 content-section'>
+      <div className='mt-8 content-section border-dashed-long p-6 rounded-[4px]'>
         <Experience />
       </div>
     </ClientHome>

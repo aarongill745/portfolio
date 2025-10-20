@@ -40,7 +40,7 @@ const TEXT_COLORS: Record<string, string> = {
 
 export default function Skills() {
   return (
-    <div className="mb-16">
+    <div className="mb-2">
       <h2 className="text-2ixl sm:text-3xl mb-2 font-black tracking-tighter [word-spacing:-0.4oem]">Tech that I use</h2>
       <div className="border-t-[2px] border-foreground mb-5"></div>
       {SKILLS.map((item, id) => {

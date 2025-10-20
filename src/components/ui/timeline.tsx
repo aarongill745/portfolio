@@ -170,10 +170,10 @@ function DesktopTimeline({ items }: TimelineProps) {
               <TimelineConnector
                 className="[html[data-aesthetic=brutal]_&]:!shadow-none"
                 sx={{
-                  bgcolor: 'var(--timeline-connector)',
+                  bgcolor: 'var(--timeline-border)',
                   width: 4,
-                  border: '2px solid var(--timeline-border)',
-                  boxShadow: '2px 0 0 0 var(--background), -2px 0 0 0 var(--background)'
+                  border: 'none',
+                  boxShadow: 'none'
                 }}
               />
             )}
