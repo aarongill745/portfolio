@@ -19,7 +19,7 @@ export function IntroSection() {
 
 return (
     <div
-      className="pixel-border p-6 mb-6 bg-cover bg-center transition-all"
+      className="intro-section pixel-border p-6 mb-6 bg-cover bg-center transition-all"
       style={{
         backgroundImage: mounted ? `url(${cloudsBg})` : `url(${lightClouds.src})`,
       }}

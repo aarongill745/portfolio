@@ -349,10 +349,48 @@ body::-webkit-scrollbar-thumb:hover {
  * Component-Specific Overrides
  */
 
-/* Hero section - brutal aesthetic uses uniform foreground color */
-[data-aesthetic="brutal"] .hero-section h1,
+/* Hero section - brutal aesthetic uses uniform foreground color and modern font */
+[data-aesthetic="brutal"] .hero-section {
+  padding: 2rem !important;
+}
+
+[data-aesthetic="brutal"] .hero-section h1 {
+  color: var(--foreground) !important;
+  font-family: var(--font-modern), system-ui, -apple-system, sans-serif !important;
+  font-size: 3.5rem !important;
+  margin-bottom: 0.5rem !important;
+  line-height: 1 !important;
+}
+
 [data-aesthetic="brutal"] .hero-section p {
   color: var(--foreground) !important;
+  font-family: var(--font-modern), system-ui, -apple-system, sans-serif !important;
+  font-size: 1.5rem !important;
+  line-height: 1.2 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+[data-aesthetic="brutal"] .hero-section p:last-child {
+  font-size: 1rem !important;
+  padding-top: 0.5rem !important;
+}
+
+/* Intro section - brutal aesthetic uses modern font with increased sizing */
+[data-aesthetic="brutal"] .intro-section {
+  padding: 2rem !important;
+}
+
+[data-aesthetic="brutal"] .intro-section p {
+  font-family: var(--font-modern), system-ui, -apple-system, sans-serif !important;
+  font-size: 1.25rem !important;
+  line-height: 1.6 !important;
+}
+
+/* Links - brutal aesthetic uses modern font */
+[data-aesthetic="brutal"] .links-container a span {
+  font-family: var(--font-modern), system-ui, -apple-system, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.125rem !important;
 }
 
 /* Tooltip - brutal aesthetic uses sharp rectangles and modern font */
