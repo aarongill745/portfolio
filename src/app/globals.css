@@ -37,23 +37,23 @@
   --dot-radius: 50%;
 }
 
-/* Brutal dark theme */
+/* Brutal dark theme - harmonized with clouds gradient */
 .dark {
-  --background: #0a0a0a;
-  --secondary-background: #1a1a1a;
-  --foreground: #ffffff;
-  --main-foreground: #000000;
-  --main: #facc15;
-  --accent: #fb923c;
-  --border: #000000;
-  --ring: #facc15;
-  --overlay: rgba(0, 0, 0, 0.9);
-  --timeline-connector: #ffffff;
-  --timeline-border: #ffffff;
-  --company-title-color: #ffffff;
-  --skill-bg: #000000;
-  --skill-text: #ffffff;
-  --skill-border: #ffffff;
+  --background: #1a0f2e;        /* Deep purple-black from cloud shadows */
+  --secondary-background: #2a1f3d; /* Slightly lighter purple */
+  --foreground: #f8e5f0;         /* Soft pink-white from cloud highlights */
+  --main-foreground: #1a0f2e;    /* Dark purple for text on bright backgrounds */
+  --main: #e5a3c7;               /* Mid-tone pink from clouds */
+  --accent: #b8328e;             /* Vibrant magenta from cloud mid-tones */
+  --border: #943976;             /* Darker magenta for buttons/interactive borders */
+  --ring: #f5c4d8;               /* Light pink for focus rings */
+  --overlay: rgba(26, 15, 46, 0.92); /* Deep purple overlay */
+  --timeline-connector: #b8328e; /* Magenta connector line */
+  --timeline-border: #e5a3c7;    /* Lighter pink border for timeline elements */
+  --company-title-color: #f5c4d8; /* Light pink for company names */
+  --skill-bg: #4a2f6e;           /* Deep purple from cloud base */
+  --skill-text: #f8e5f0;         /* Soft pink-white text */
+  --skill-border: #b8328e;       /* Magenta border for contrast */
   --border-width: 4px;
   --button-border-width: 3px;
   --shadow-offset: 6px;
@@ -103,27 +103,27 @@
 
 /* Pixel dark theme */
 [data-aesthetic="pixel"].dark {
-  --background: #0a0a0f;
-  --secondary-background: #16141d;
-  --foreground: #c7c5d1;
+  --background: #1a0f2e;
+  --secondary-background: #2a1f3d;
+  --foreground: #e8dff5;
   --main-foreground: #000000;
-  --main: #b8860b;
-  --accent: #8b2635;
-  --border: #2a1f2d;
-  --ring: #b8860b;
-  --overlay: rgba(10, 10, 15, 0.85);
-  --timeline-connector: #91a3c2;
-  --timeline-border: #2a1f2d;
-  --company-title-color: #c7c5d1;
-  --skill-bg: #2a1f2d;
-  --skill-text: #c7c5d1;
-  --skill-border: #c7c5d1;
-  --grid-color: rgba(42, 31, 45, 0.3);
+  --main: #ffd700;
+  --accent: #d966b0;
+  --border: #4a4464;
+  --ring: #ffd700;
+  --overlay: rgba(26, 15, 46, 0.85);
+  --timeline-connector: #4a4464;
+  --timeline-border: #4a4464;
+  --company-title-color: #e8dff5;
+  --skill-bg: #3d2f5f;
+  --skill-text: #ffd700;
+  --skill-border: #4a4464;
+  --grid-color: rgba(74, 68, 100, 0.08);
   --pixel-gold: #ffd700;
-  --pixel-purple: #c77dff;
-  --pixel-cyan: #4cc9f0;
-  --pixel-pink: #ff0a54;
-  --pixel-orange: #ff6b35;
+  --pixel-purple: #a084dc;
+  --pixel-cyan: #7dd3f0;
+  --pixel-pink: #d966b0;
+  --pixel-orange: #ff8f3d;
   --pixel-yellow: #FFDB58;
   --pixel-red: #FF4911;
   --pixel-blue: #3300FF;
