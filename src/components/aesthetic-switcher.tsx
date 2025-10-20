@@ -11,7 +11,7 @@ export function AestheticSwitcher() {
       className="pixel-button text-xs sm:text-sm"
       aria-label="Toggle aesthetic mode"
     >
-      {aesthetic === 'pixel' ? 'MAKE IT BRUTAL' : 'MAKE IT 2D'}
+      <span>{aesthetic === 'pixel' ? 'MAKE IT BRUTAL' : 'MAKE IT 2D'}</span>
     </button>
   )
 }
