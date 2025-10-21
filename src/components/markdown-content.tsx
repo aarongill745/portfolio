@@ -21,10 +21,10 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
           </h1>
         ),
         h2: ({ children }) => (
-          <h2 className="font-blog text-2xl font-bold mb-3 mt-6">{children}</h2>
+          <h2 className="font-blog text-2xl font-bold mb-3 mt-12">{children}</h2>
         ),
         h3: ({ children }) => (
-          <h3 className="font-blog text-xl font-bold mb-2 mt-4">{children}</h3>
+          <h3 className="font-blog text-xl font-bold mb-2 mt-8">{children}</h3>
         ),
         p: ({ children }) => (
           <p className="font-blog mb-4 leading-relaxed text-lg">{children}</p>
