@@ -15,7 +15,7 @@ export default function BlogPage() {
 
       {/* Center content */}
       <div className="flex flex-row justify-center px-4 lg:px-8">
-        <div className="font-pixel w-full max-w-2xl lg:max-w-3xl">
+        <div className="font-pixel w-full max-w-3xl lg:max-w-4xl">
           {/* Header */}
           <div className="flex justify-between items-start mb-8">
             <div>
@@ -44,11 +44,11 @@ export default function BlogPage() {
                     href={`/blog/${post.slug}`}
                     className="block pixel-border bg-secondary-background p-6 hover:bg-accent transition-colors content-section"
                   >
-                    <h3 className="font-blog text-lg mb-2">{post.title}</h3>
-                    <div className="font-blog text-sm opacity-70 mb-3">
+                    <h3 className="font-blog text-xl mb-2">{post.title}</h3>
+                    <div className="font-blog text-base opacity-70 mb-3">
                       {formatDate(post.date)} • {post.readTime}
                     </div>
-                    <p className="font-blog text-sm leading-relaxed">{post.excerpt}</p>
+                    <p className="font-blog text-base leading-relaxed">{post.excerpt}</p>
                   </Link>
                 ))}
               </div>
@@ -71,17 +71,17 @@ export default function BlogPage() {
                     className="block pixel-border bg-secondary-background p-6 hover:bg-accent transition-colors content-section"
                   >
                     <div className="flex justify-between items-start mb-2">
-                      <h3 className="font-blog text-lg">{post.title}</h3>
+                      <h3 className="font-blog text-xl">{post.title}</h3>
                       {post.featured && (
                         <span className="font-blog text-xs px-2 py-1 pixel-border bg-accent">
                           FEATURED
                         </span>
                       )}
                     </div>
-                    <div className="font-blog text-sm opacity-70 mb-3">
+                    <div className="font-blog text-base opacity-70 mb-3">
                       {formatDate(post.date)} • {post.readTime}
                     </div>
-                    <p className="font-blog text-sm leading-relaxed">{post.excerpt}</p>
+                    <p className="font-blog text-base leading-relaxed">{post.excerpt}</p>
                   </Link>
                 ))
               )}
