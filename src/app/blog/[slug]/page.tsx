@@ -49,7 +49,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* Center content */}
       <div className="flex flex-row justify-center px-4 lg:px-8">
-        <div className="font-pixel w-full max-w-2xl lg:max-w-3xl">
+        <div className="font-pixel w-full max-w-3xl lg:max-w-4xl">
           {/* Header */}
           <div className="flex justify-between items-start mb-8">
             <Link
@@ -66,12 +66,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           {/* Post Header */}
           <article className="pixel-border bg-secondary-background p-6 mb-6">
-            <h1 className="font-blog text-2xl mb-4 leading-relaxed">{post.title}</h1>
-            <div className="font-blog text-sm opacity-70 mb-4">
+            <h1 className="font-blog text-3xl mb-4 leading-relaxed">{post.title}</h1>
+            <div className="font-blog text-base opacity-70 mb-4">
               {formatDate(post.date)} • {post.readTime}
             </div>
             {post.excerpt && (
-              <p className="font-blog text-sm leading-relaxed italic border-l-4 border-accent pl-4 py-2">
+              <p className="font-blog text-base leading-relaxed italic border-l-4 border-accent pl-4 py-2">
                 {post.excerpt}
               </p>
             )}
