@@ -1,32 +1,28 @@
 ---
-title: "Your side projects don't need React"
+title: "A different approach to side projects"
 date: "2025-11-01"
-excerpt: "Aim for the stars before the sky, and you'll barely get off the ground."
+excerpt: "Maybe I don't need a frontend."
 featured: true
 ---
 
 # Introduction
 
-In developerland, side projects are the way to show everyone else what they can do.
+I find myself constantly in a limbo thinking about how I should be doing side projects, starting side projects, and then abandoning them.
 
-Within AILand, side projects are a dime a dozen. A few prompts will have you a full stack application that will take someone in developerland weeks.
+Side projects for me is kind of like minecraft, I've got 2 weeks before I get bored.
 
-In my opinion, it's more important than ever to actually think about what kind of problems you're trying to solve with you side projects.
-
----
-
-## 1. The trap
-
-Now that AI is everywhere, I've seen an uptick in people showing off their side projects around the web. Problem is, it didn't take long to realise that nothing I was seeing was actually new. Most projects were just uninspired clones of existing, wildly successful products, or clones of other AI side projects. AI note taking apps, air-bnb clones, you name it.
-
-There was a pattern. ShadCN UI components, fade background, same old layout. 
-
-"AI Slop". 
-
-The trap is that these kind of projects aren't impressive anymore. It's takes just 5 minutes with claude code to make one of these.
+This is my experience:
+![Image here](/portfolio/blog/side-projects/image.png)
 
 ---
 
-## Then what?
+## What to build instead?
 
+If I'm being honest, I've seen a lot of hype around MCP recently. MCP for this, MCP for that.
+
+Most of the time, I tell myself the same thing, I would much rather just open a firefox tab and do it myself.
+
+**I'll give you an example:**
+
+Recently, I saw a demo of
 
