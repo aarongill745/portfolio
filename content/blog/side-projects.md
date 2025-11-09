@@ -5,24 +5,33 @@ excerpt: "Maybe I don't need a frontend."
 featured: true
 ---
 
-# Introduction
+# **The problem**
 
-I find myself constantly in a limbo thinking about how I should be doing side projects, starting side projects, and then abandoning them.
+I find myself constantly in a limbo thinking that I should be doing side projects.
 
-Side projects for me is kind of like minecraft, I've got 2 weeks before I get bored.
+The problem is that side projects for me are kind of like minecraft, I've got 2 weeks before I get bored.
 
-This is my experience:
+The cycle kinda looks like this:
 ![Image here](/portfolio/blog/side-projects/image.png)
 
 ---
 
-## What to build instead?
+## **What's kind of worked since**:
 
-If I'm being honest, I've seen a lot of hype around MCP recently. MCP for this, MCP for that.
+Recently, I've been looking at ways to improve how I write code. 
 
-Most of the time, I tell myself the same thing, I would much rather just open a firefox tab and do it myself.
+I've switched over to Vim (VSCode extension), spent time learning shortcuts, and scoured the marketplace for a good theme.
+
+Then I realised, it wouldn't be too bad of an idea to make some extensions. The goal isn't to 
 
 **I'll give you an example:**
 
 Recently, I saw a demo of
 
+
+- looking at ways to make my code editor mine
+- learned vim, shortcuts, found a new theme
+- Why not make some extensions?
+    QuickLinks:
+        Create bookmark in vscode that can be accessed via the command palette to open links on your browser.
+        Why? Beacuse I hate managing bookmarks on firefox, why not just move those bookmarks into vscode and access them there.
