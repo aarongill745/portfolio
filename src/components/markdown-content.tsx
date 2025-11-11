@@ -58,13 +58,13 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
             )
           }
           return (
-            <code className={className} {...props}>
+            <code className={`${className} text-sm`} {...props}>
               {children}
             </code>
           )
         },
         pre: ({ children }) => (
-          <pre className="pixel-border bg-primary p-4 mb-4 overflow-x-auto text-lg">
+          <pre className="bg-primary border-border border-2 p-3 mb-4 overflow-x-hidden whitespace-pre-wrap break-words text-sm rounded">
             {children}
           </pre>
         ),

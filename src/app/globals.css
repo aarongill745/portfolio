@@ -256,6 +256,7 @@ body {
 
 .font-blog {
   font-family: var(--font-blog), system-ui, -apple-system, sans-serif;
+  word-spacing: 0.15em;
 }
 
 /* Image rendering utilities */
