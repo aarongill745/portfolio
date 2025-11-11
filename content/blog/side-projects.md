@@ -1,37 +1,22 @@
 ---
-title: "A different approach to side projects"
+title: "Building my first VSCode extension: QuickLinks"
 date: "2025-11-01"
-excerpt: "Maybe I don't need a frontend."
+excerpt: "I hate how messy browser bookmarks can get."
 featured: true
 ---
 
-# **The problem**
+# **What does it do?**
 
-I find myself constantly in a limbo thinking that I should be doing side projects.
+QuickLinks is a VSCode extension that adds a bookmark launcher to the command palette.
 
-The problem is that side projects for me are kind of like minecraft, I've got 2 weeks before I get bored.
+It exists because I was having a hard time managing my browser bookmarks at work. I was working on a lot of different code bases, each having their own repos, jira boards, technical documentation, swagger docs, etc. 
 
-The cycle kinda looks like this:
-![Image here](/portfolio/blog/side-projects/image.png)
+I also felt a random urgency to start building side projects, maybe because I was scared of losing my job.
 
----
-
-## **What's kind of worked since**:
-
-Recently, I've been looking at ways to improve how I write code. 
-
-I've switched over to Vim (VSCode extension), spent time learning shortcuts, and scoured the marketplace for a good theme.
-
-Then I realised, it wouldn't be too bad of an idea to make some extensions. The goal isn't to 
-
-**I'll give you an example:**
-
-Recently, I saw a demo of
+**The requirements:**
+- Configure and launch bookmarks from vs + code.
+- bookmarks scoped to either the workspace, or globally.
+- Fuzzy search
+- A keyboard shortcut
 
 
-- looking at ways to make my code editor mine
-- learned vim, shortcuts, found a new theme
-- Why not make some extensions?
-    QuickLinks:
-        Create bookmark in vscode that can be accessed via the command palette to open links on your browser.
-        Why? Beacuse I hate managing bookmarks on firefox, why not just move those bookmarks into vscode and access them there.
