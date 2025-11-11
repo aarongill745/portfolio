@@ -53,8 +53,8 @@ That context has two useful features, `context.globalState` and `context.workspa
 - Global state is accessible regardless of what workspace you're in.
 - Workspace states are scoped only to that directory.
  
+I use **global state** for links that I'll need for any project. Think google.com, chatgpt, etc.
 
-
-
+The **workspace state** is for bookmarks that I'll only need when I'm actively working that project, and don't want it carrying over elsewhere. Jira boards, Github repositorties, important confluence docs are usually scoped to a workspace. Most of my quick links are scoped to the workspace.
 
 
