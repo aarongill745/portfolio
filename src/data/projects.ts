@@ -34,5 +34,4 @@ const PROJECTS: {
     repoUrl: 'https://github.com',
   },
 ]
-
 export default PROJECTS
