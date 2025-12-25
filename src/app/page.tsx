@@ -10,7 +10,7 @@ export default function Home() {
   const featuredPosts = getFeaturedPosts().slice(0, 3)
   return (
     <ClientHome featuredPosts={featuredPosts}>
-      <div className="mt-8 content-section pixel-border p-6 bg-white">
+      <div className="mt-8 content-section pixel-border p-6 bg-secondary-background">
         <AboutMe />
       </div>
 
