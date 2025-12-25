@@ -63,16 +63,20 @@ export default function ClientHome({ children }: ClientHomeProps) {
 
       {/* Center content */}
       <div className='flex flex-row justify-center px-4 lg:px-8'>
-        <div className="font-pixel w-full max-w-2xl lg:max-w-3xl">
+        <div className="w-full max-w-2xl lg:max-w-3xl">
           <div>
             <div className='flex justify-end gap-4 pb-4'>
               <AestheticSwitcher/>
               <ThemeSwitcher/>
             </div>
-            <HeroSection />
+            <div className="font-pixel">
+              <HeroSection />
+            </div>
           </div>
 
-          <IntroSection />
+          <div className="font-pixel">
+            <IntroSection />
+          </div>
 
           {children}
         </div>

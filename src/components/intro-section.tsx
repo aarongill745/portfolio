@@ -39,8 +39,8 @@ return (
           `
         }}
       >
-        <p>HEY! I&apos;M AARON GILL, A SOFTWARE ENGINEER BASED IN SYDNEY, AUSTRALIA.</p>
-        <p>THIS IS MY PORTFOLIO SITE.</p>
+        <p>HEY! I&apos;M AARON GILL, A SOFTWARE ENGINEER BASED IN SYDNEY, AUSTRALIA</p>
+        <p>WELCOME TO MY PORTFOLIO SITE</p>
       </div>
       <Links />
     </div>
