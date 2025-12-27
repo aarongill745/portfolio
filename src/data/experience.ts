@@ -27,7 +27,7 @@ const PAST_ROLES: {
     company: 'Commonwealth Bank of Australia',
     role: 'Technology Graduate - Engineering',
     description:
-      '3 x 6 month software engineering rotations as part of a graduate program. I rotated through these teams:\n- Retail Technology (Credit Cards)\n- Engineering Platforms (SDLC Hub)\n- Business Banking (AI Acceleration)',
+      '3 x 6 month full stack software engineering rotations as part of a graduate program, working in both customer facing applications and internal tooling endeavours.',
     startDate: 'Feb 2024',
     endDate: 'Aug 2025',
     companyColor: 'var(--pixel-yellow)',
@@ -44,29 +44,25 @@ const PAST_ROLES: {
     company: 'Coles',
     role: 'Online Pick Packer',
     description:
-      'Walked around the store collecting items for online orders.',
+      'Walked around the store procuring items for online orders.',
     startDate: 'Feb 2021',
     endDate: 'Mar 2022',
     companyColor: 'var(--pixel-red)',
     technologies: [],
     detailedResponsibilities: [
-      'Efficiently picked and packed grocery items for online customer orders',
-      'Maintained high accuracy rates for order fulfillment',
-      'Worked in a fast-paced retail environment meeting daily targets'
+      'Made sure online grocery orders were being fulfilled during COVID lockdowns.'
     ]
   },
   {
     company: 'Private Tutoring',
     role: 'Tutor',
-    description: 'Tutored math for high school students',
+    description: 'Tutored English and General Ability to primary school students.',
     startDate: 'Feb 2020',
     endDate: 'Feb 2021',
     companyColor: 'var(--pixel-blue)',
     technologies: [],
     detailedResponsibilities: [
-      'Provided one-on-one mathematics tutoring for high school students',
-      'Developed customized lesson plans based on individual student needs',
-      'Helped students improve their grades and understanding of mathematical concepts'
+      'Tutored groups of primary school students in preparation for the OC test.',
     ]
   }
 ]
