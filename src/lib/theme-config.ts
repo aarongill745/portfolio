@@ -9,7 +9,7 @@
  * - Visual style (border radius, image rendering)
  */
 
-export type ThemeMode = 'pixel' | 'brutal'
+export type ThemeMode = 'pixel'
 export type ColorScheme = 'light' | 'dark'
 
 /**
@@ -138,29 +138,29 @@ const pixelLight: ThemeTokens = {
  */
 const pixelDark: ThemeTokens = {
   colors: {
-    background: '#0a0a0f',
-    secondaryBackground: '#16141d',
-    foreground: '#c7c5d1',
+    background: '#1a0f2e',
+    secondaryBackground: '#2a1f3d',
+    foreground: '#e8dff5',
     mainForeground: '#000000',
-    main: '#b8860b',
-    accent: '#8b2635',
-    border: '#2a1f2d',
-    ring: '#b8860b',
-    overlay: 'rgba(10, 10, 15, 0.85)',
-    timelineConnector: '#91a3c2',
-    timelineBorder: '#2a1f2d',
-    companyTitle: '#c7c5d1',
-    skillBg: '#2a1f2d',
-    skillText: '#c7c5d1',
-    skillBorder: '#c7c5d1',
-    grid: 'rgba(42, 31, 45, 0.3)',
+    main: '#ffd700',
+    accent: '#d966b0',
+    border: '#4a4464',
+    ring: '#ffd700',
+    overlay: 'rgba(26, 15, 46, 0.85)',
+    timelineConnector: '#4a4464',
+    timelineBorder: '#4a4464',
+    companyTitle: '#e8dff5',
+    skillBg: '#3d2f5f',
+    skillText: '#ffd700',
+    skillBorder: '#4a4464',
+    grid: 'rgba(74, 68, 100, 0.08)',
 
     // Vibrant pixel colors (dark variants)
     pixelGold: '#ffd700',
-    pixelPurple: '#c77dff',
-    pixelCyan: '#4cc9f0',
-    pixelPink: '#ff0a54',
-    pixelOrange: '#ff6b35',
+    pixelPurple: '#a084dc',
+    pixelCyan: '#7dd3f0',
+    pixelPink: '#d966b0',
+    pixelOrange: '#ff8f3d',
     pixelYellow: '#FFDB58',
     pixelRed: '#FF4911',
     pixelBlue: '#3300FF',
@@ -187,98 +187,12 @@ const pixelDark: ThemeTokens = {
 }
 
 /**
- * Brutal Light Theme
- */
-const brutalLight: ThemeTokens = {
-  colors: {
-    background: '#fef9f3',
-    secondaryBackground: '#ffffff',
-    foreground: '#000000',
-    mainForeground: '#000000',
-    main: '#facc15',
-    accent: '#fb923c',
-    border: '#000000',
-    ring: '#facc15',
-    overlay: 'rgba(255, 255, 255, 0.95)',
-    timelineConnector: '#ffffff',
-    timelineBorder: '#000000',
-    companyTitle: '#91a3c2',
-    skillBg: '#facc15',
-    skillText: '#000000',
-    skillBorder: '#000000',
-  },
-  spacing: {
-    borderWidth: '4px',
-    buttonBorderWidth: '3px',
-    shadowOffset: '6px',
-    scrollbarWidth: '20px',
-  },
-  shadows: {
-    default: '6px 6px 0px 0px',
-  },
-  typography: {
-    weightBase: '500',
-    weightHeading: '700',
-    fontFamily: 'var(--font-modern)',
-  },
-  visual: {
-    borderRadius: '0px',
-    dotRadius: '50%',
-  },
-}
-
-/**
- * Brutal Dark Theme
- */
-const brutalDark: ThemeTokens = {
-  colors: {
-    background: '#0a0a0a',
-    secondaryBackground: '#1a1a1a',
-    foreground: '#ffffff',
-    mainForeground: '#000000',
-    main: '#facc15',
-    accent: '#fb923c',
-    border: '#000000',
-    ring: '#facc15',
-    overlay: 'rgba(0, 0, 0, 0.9)',
-    timelineConnector: '#ffffff',
-    timelineBorder: '#ffffff',
-    companyTitle: '#ffffff',
-    skillBg: '#000000',
-    skillText: '#ffffff',
-    skillBorder: '#ffffff',
-  },
-  spacing: {
-    borderWidth: '4px',
-    buttonBorderWidth: '3px',
-    shadowOffset: '6px',
-    scrollbarWidth: '20px',
-  },
-  shadows: {
-    default: '6px 6px 0px 0px',
-  },
-  typography: {
-    weightBase: '500',
-    weightHeading: '700',
-    fontFamily: 'var(--font-modern)',
-  },
-  visual: {
-    borderRadius: '0px',
-    dotRadius: '50%',
-  },
-}
-
-/**
  * Theme registry - maps theme combinations to their configurations
  */
 export const themes = {
   pixel: {
     light: pixelLight,
     dark: pixelDark,
-  },
-  brutal: {
-    light: brutalLight,
-    dark: brutalDark,
   },
 } as const
 
@@ -292,7 +206,7 @@ export function getThemeConfig(mode: ThemeMode, colorScheme: ColorScheme): Theme
 /**
  * Helper to get all theme modes
  */
-export const themeModes: ThemeMode[] = ['pixel', 'brutal']
+export const themeModes: ThemeMode[] = ['pixel']
 
 /**
  * Helper to get all color schemes

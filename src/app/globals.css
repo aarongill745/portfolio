@@ -4,68 +4,14 @@
 @custom-variant dark (&:is(.dark *));
 
 /**
- * Theme CSS Variables (Generated)
+ * Theme CSS Variables
  *
  * These variables are defined in src/lib/theme-config.ts
  * DO NOT manually edit these values here - update the theme config instead.
  */
 
-/* Default brutal light theme */
-:root {
-  --background: #fef9f3;
-  --secondary-background: #ffffff;
-  --foreground: #000000;
-  --main-foreground: #000000;
-  --main: #facc15;
-  --accent: #fb923c;
-  --border: #000000;
-  --ring: #facc15;
-  --overlay: rgba(255, 255, 255, 0.95);
-  --timeline-connector: #ffffff;
-  --timeline-border: #000000;
-  --company-title-color: #91a3c2;
-  --skill-bg: #facc15;
-  --skill-text: #000000;
-  --skill-border: #000000;
-  --border-width: 4px;
-  --button-border-width: 3px;
-  --shadow-offset: 6px;
-  --scrollbar-width: 20px;
-  --shadow: 6px 6px 0px 0px var(--border);
-  --font-weight-base: 500;
-  --font-weight-heading: 700;
-  --dot-radius: 50%;
-}
-
-/* Brutal dark theme - harmonized with clouds gradient */
-.dark {
-  --background: #1a0f2e;        /* Deep purple-black from cloud shadows */
-  --secondary-background: #2a1f3d; /* Slightly lighter purple */
-  --foreground: #f8e5f0;         /* Soft pink-white from cloud highlights */
-  --main-foreground: #1a0f2e;    /* Dark purple for text on bright backgrounds */
-  --main: #e5a3c7;               /* Mid-tone pink from clouds */
-  --accent: #b8328e;             /* Vibrant magenta from cloud mid-tones */
-  --border: #943976;             /* Darker magenta for buttons/interactive borders */
-  --ring: #f5c4d8;               /* Light pink for focus rings */
-  --overlay: rgba(26, 15, 46, 0.92); /* Deep purple overlay */
-  --timeline-connector: #b8328e; /* Magenta connector line */
-  --timeline-border: #e5a3c7;    /* Lighter pink border for timeline elements */
-  --company-title-color: #f5c4d8; /* Light pink for company names */
-  --skill-bg: #4a2f6e;           /* Deep purple from cloud base */
-  --skill-text: #f8e5f0;         /* Soft pink-white text */
-  --skill-border: #b8328e;       /* Magenta border for contrast */
-  --border-width: 4px;
-  --button-border-width: 3px;
-  --shadow-offset: 6px;
-  --scrollbar-width: 20px;
-  --shadow: 6px 6px 0px 0px var(--border);
-  --font-weight-base: 500;
-  --font-weight-heading: 700;
-  --dot-radius: 50%;
-}
-
 /* Pixel light theme */
-[data-aesthetic="pixel"] {
+:root {
   --background: #f8f9ff;
   --secondary-background: #ffffff;
   --foreground: #1a1a2e;
@@ -102,7 +48,7 @@
 }
 
 /* Pixel dark theme */
-[data-aesthetic="pixel"].dark {
+.dark {
   --background: #1a0f2e;
   --secondary-background: #2a1f3d;
   --foreground: #e8dff5;
@@ -194,46 +140,28 @@ body {
 /**
  * Typography System
  *
- * Font weights and families adapt based on aesthetic mode
+ * Font weights and families use the retro pixel style.
  */
 
-/* Brutal aesthetic - bold, modern typography */
-[data-aesthetic="brutal"] h1,
-[data-aesthetic="brutal"] h2,
-[data-aesthetic="brutal"] h3 {
-  font-weight: var(--font-weight-heading);
-}
-
-[data-aesthetic="brutal"] p,
-[data-aesthetic="brutal"] span {
+h1,
+h2,
+h3,
+p,
+span {
   font-weight: var(--font-weight-base);
 }
 
-[data-aesthetic="brutal"] .content-section {
-  font-family: var(--font-modern), system-ui, -apple-system, sans-serif;
-}
-
-/* Pixel aesthetic - uniform retro weight */
-[data-aesthetic="pixel"] h1,
-[data-aesthetic="pixel"] h2,
-[data-aesthetic="pixel"] h3,
-[data-aesthetic="pixel"] p,
-[data-aesthetic="pixel"] span {
-  font-weight: var(--font-weight-base);
-}
-
-[data-aesthetic="pixel"] .content-section {
+.content-section {
   font-family: var(--font-content), system-ui, -apple-system, sans-serif;
 }
 
 /**
  * Visual Effects
  *
- * Aesthetic-specific visual treatments
+ * Pixel visual treatments
  */
 
-/* Pixel aesthetic - grid background and crisp rendering */
-[data-aesthetic="pixel"] body {
+body {
   background-image:
     linear-gradient(var(--grid-color) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
@@ -254,10 +182,6 @@ body {
   font-family: var(--font-pixel), 'Courier New', monospace;
 }
 
-.font-modern {
-  font-family: var(--font-modern), system-ui, -apple-system, sans-serif;
-}
-
 .font-blog {
   font-family: var(--font-blog), system-ui, -apple-system, sans-serif;
 }
@@ -273,32 +197,19 @@ body {
   image-rendering: crisp-edges;
 }
 
-/* Adaptive border component - responds to theme mode */
 .pixel-border {
   border: var(--border-width) solid var(--border);
   box-shadow: var(--shadow);
-  border-radius: var(--radius-base, 0px);
-}
-
-/* Pixel aesthetic - rounded corners */
-[data-aesthetic="pixel"] .pixel-border {
   border-radius: 4px;
 }
 
-/* Brutal aesthetic - no shadow, sharp corners */
-[data-aesthetic="brutal"] .pixel-border {
-  box-shadow: none;
-  border-radius: 0px;
-}
-
-/* Adaptive button component */
 .pixel-button {
   background: var(--main);
   color: var(--main-foreground);
   border: var(--button-border-width) solid var(--border);
-  padding: 12px 24px;
+  padding: 8px 16px;
   font-family: var(--font-pixel), monospace;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   transition: all 0.1s ease;
   box-shadow: calc(var(--shadow-offset) - 2px) calc(var(--shadow-offset) - 2px) 0px var(--border);
@@ -314,12 +225,6 @@ body {
 .pixel-button:active {
   transform: translate(var(--shadow-offset), var(--shadow-offset));
   box-shadow: none;
-}
-
-/* Pixel aesthetic - smaller, crisper button */
-[data-aesthetic="pixel"] .pixel-button {
-  padding: 8px 16px;
-  font-size: 12px;
 }
 
 /**
@@ -361,75 +266,20 @@ body::-webkit-scrollbar-thumb:hover {
  * Component-Specific Overrides
  */
 
-/* Hero section - brutal aesthetic uses uniform foreground color and modern font */
-[data-aesthetic="brutal"] .hero-section {
-  padding: 2rem !important;
-}
-
-[data-aesthetic="brutal"] .hero-section h1 {
-  color: var(--foreground) !important;
-  font-family: var(--font-modern), system-ui, -apple-system, sans-serif !important;
-  font-size: 3.5rem !important;
-  margin-bottom: 0.5rem !important;
-  line-height: 1 !important;
-}
-
-[data-aesthetic="brutal"] .hero-section p {
-  color: var(--foreground) !important;
-  font-family: var(--font-modern), system-ui, -apple-system, sans-serif !important;
-  font-size: 1.5rem !important;
-  line-height: 1.2 !important;
-  margin-bottom: 0.25rem !important;
-}
-
-[data-aesthetic="brutal"] .hero-section p:last-child {
-  font-size: 1rem !important;
-  padding-top: 0.5rem !important;
-}
-
-/* Intro section - brutal aesthetic uses modern font with increased sizing */
-[data-aesthetic="brutal"] .intro-section {
-  padding: 2rem !important;
-}
-
-[data-aesthetic="brutal"] .intro-section p {
-  font-family: var(--font-modern), system-ui, -apple-system, sans-serif !important;
-  font-size: 1.25rem !important;
-  line-height: 1.6 !important;
-  word-spacing: 0.15em !important; /* Increase spacing between words for brutal aesthetic */
-  letter-spacing: 0.05em !important; /* Increase spacing between letters for brutal aesthetic */
-}
-
-/* Links - brutal aesthetic uses modern font */
-[data-aesthetic="brutal"] .links-container a span {
-  font-family: var(--font-modern), system-ui, -apple-system, sans-serif !important;
-  font-weight: 700 !important;
-  font-size: 1.125rem !important;
-}
-
-/* Tooltip - brutal aesthetic uses sharp rectangles and modern font */
-[data-aesthetic="brutal"] [data-slot="tooltip-content"] {
-  border-radius: 0px !important;
-  font-family: var(--font-modern), system-ui, -apple-system, sans-serif !important;
-  font-weight: 700 !important;
-  font-size: 1rem !important;
-}
-
-/* Tooltip - pixel aesthetic uses slight rounding */
-[data-aesthetic="pixel"] [data-slot="tooltip-content"] {
+[data-slot="tooltip-content"] {
   border-radius: 4px !important;
 }
 
-/* Skills section - pixel aesthetic compensates for optical size of monospace font */
-[data-aesthetic="pixel"] .skills-heading {
-  font-size: 1.25rem !important; /* 20px - much smaller for pixel aesthetic */
-  word-spacing: -0.3em !important; /* Tighten spacing between words significantly */
+/* Skills section - compensates for optical size of monospace font */
+.skills-heading {
+  font-size: 1.25rem !important;
+  word-spacing: -0.3em !important;
 }
 
 @media (min-width: 640px) {
-  [data-aesthetic="pixel"] .skills-heading {
-    font-size: 1.5rem !important; /* 24px - much smaller for pixel aesthetic */
-    word-spacing: -0.3em !important; /* Tighten spacing between words significantly */
+  .skills-heading {
+    font-size: 1.5rem !important;
+    word-spacing: -0.3em !important;
   }
 }
 

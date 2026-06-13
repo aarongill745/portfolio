@@ -77,21 +77,13 @@ function generateCSSRule(selector: string, tokens: ThemeTokens): string {
 export function generateThemeCSS(): string {
   const rules: string[] = []
 
-  // Default brutal light theme (root)
-  const brutalLightTokens = getThemeConfig('brutal', 'light')
-  rules.push(generateCSSRule(':root', brutalLightTokens))
-
-  // Dark mode override (brutal dark)
-  const brutalDarkTokens = getThemeConfig('brutal', 'dark')
-  rules.push(generateCSSRule('.dark', brutalDarkTokens))
-
-  // Pixel aesthetic light mode
+  // Pixel light theme
   const pixelLightTokens = getThemeConfig('pixel', 'light')
-  rules.push(generateCSSRule('[data-aesthetic="pixel"]', pixelLightTokens))
+  rules.push(generateCSSRule(':root', pixelLightTokens))
 
-  // Pixel aesthetic dark mode
+  // Pixel dark theme
   const pixelDarkTokens = getThemeConfig('pixel', 'dark')
-  rules.push(generateCSSRule('[data-aesthetic="pixel"].dark', pixelDarkTokens))
+  rules.push(generateCSSRule('.dark', pixelDarkTokens))
 
   return rules.join('\n\n')
 }

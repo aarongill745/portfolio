@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { getAllPosts, formatDate } from '@/lib/blog'
 import { ThemeSwitcher } from '@/components/theme-switcher'
-import { AestheticSwitcher } from '@/components/aesthetic-switcher'
 
 export default function BlogPage() {
   const posts = getAllPosts()
@@ -28,7 +27,6 @@ export default function BlogPage() {
               </Link>
             </div>
             <div className="flex gap-4">
-              <AestheticSwitcher />
               <ThemeSwitcher />
             </div>
           </div>

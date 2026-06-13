@@ -37,7 +37,7 @@ function MobileTimeline({ items }: TimelineProps) {
         <div key={index} className="relative">
           <div className="flex items-center gap-3 mb-3">
             <div
-              className="w-4 h-4 flex-shrink-0 border-[2px] border-timeline-border [html[data-aesthetic=pixel]_&]:rounded-none [html[data-aesthetic=brutal]_&]:rounded-full [html[data-aesthetic=pixel].dark_&]:!bg-[var(--company-title-color)]"
+              className="w-4 h-4 flex-shrink-0 border-[2px] border-timeline-border rounded-none dark:!bg-[var(--company-title-color)]"
               style={{ backgroundColor: item.companyColor || 'var(--company-title-color)' }}
             />
             <span className="text-sm text-foreground opacity-60">
@@ -47,7 +47,7 @@ function MobileTimeline({ items }: TimelineProps) {
           <Dialog>
             <DialogTrigger asChild>
               <div
-                className="p-4 transition-all duration-150 ease-in-out active:translate-y-1 group border-border rounded-[0px] cursor-pointer bg-secondary-background [html[data-aesthetic=brutal].dark_&]:!shadow-none"
+                className="p-4 transition-all duration-150 ease-in-out active:translate-y-1 group border-border rounded-[0px] cursor-pointer bg-secondary-background"
                 style={{
                   borderWidth: 'var(--border-width)',
                   boxShadow: 'var(--shadow)',
@@ -73,7 +73,7 @@ function MobileTimeline({ items }: TimelineProps) {
                     {item.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1.5 text-xs font-bold bg-skill-bg text-skill-text border-[2px] border-skill-border rounded-none [html[data-aesthetic=brutal].dark_&]:!shadow-none"
+                        className="px-3 py-1.5 text-xs font-bold bg-skill-bg text-skill-text border-[2px] border-skill-border rounded-none"
                         style={{ boxShadow: '2px 2px 0px 0px var(--skill-border)' }}
                       >
                         {tech}
@@ -83,7 +83,7 @@ function MobileTimeline({ items }: TimelineProps) {
                 )}
               </div>
             </DialogTrigger>
-            <DialogContent className="max-w-2xl border-[3px] border-border data-[aesthetic=pixel]:[box-shadow:6px_6px_0px_0px_var(--border)]" style={{ borderRadius: 0 }}>
+            <DialogContent className="max-w-2xl border-[3px] border-border" style={{ borderRadius: 0, boxShadow: 'var(--shadow)' }}>
               <DialogHeader>
                 <DialogTitle className="text-2xl font-semibold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                   {item.title}
@@ -156,7 +156,7 @@ function DesktopTimeline({ items }: TimelineProps) {
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineDot
-              className="[html[data-aesthetic=pixel].dark_&]:!bg-[var(--company-title-color)] [html[data-aesthetic=brutal]_&]:!shadow-none"
+              className="dark:!bg-[var(--company-title-color)]"
               sx={{
                 bgcolor: item.companyColor || 'var(--company-title-color)',
                 width: 16,
@@ -168,7 +168,6 @@ function DesktopTimeline({ items }: TimelineProps) {
             />
             {index < items.length - 1 && (
               <TimelineConnector
-                className="[html[data-aesthetic=brutal]_&]:!shadow-none"
                 sx={{
                   bgcolor: 'var(--timeline-border)',
                   width: 4,
@@ -182,7 +181,7 @@ function DesktopTimeline({ items }: TimelineProps) {
             <Dialog>
               <DialogTrigger asChild>
                 <div
-                  className="p-4 mb-4 transition-all duration-150 ease-in-out hover:-translate-y-2 cursor-pointer group border-border rounded-[0px] bg-secondary-background [html[data-aesthetic=brutal].dark_&]:!shadow-none"
+                  className="p-4 mb-4 transition-all duration-150 ease-in-out hover:-translate-y-2 cursor-pointer group border-border rounded-[0px] bg-secondary-background"
                   style={{
                     borderWidth: 'var(--border-width)',
                     boxShadow: 'var(--shadow)',
@@ -208,7 +207,7 @@ function DesktopTimeline({ items }: TimelineProps) {
                       {item.technologies.map((tech) => (
                         <span
                           key={tech}
-                          className="px-3 py-1.5 text-xs font-bold bg-skill-bg text-skill-text border-[2px] border-skill-border rounded-none [html[data-aesthetic=brutal].dark_&]:!shadow-none"
+                          className="px-3 py-1.5 text-xs font-bold bg-skill-bg text-skill-text border-[2px] border-skill-border rounded-none"
                           style={{ boxShadow: '2px 2px 0px 0px var(--skill-border)' }}
                         >
                           {tech}
@@ -218,7 +217,7 @@ function DesktopTimeline({ items }: TimelineProps) {
                   )}
                 </div>
               </DialogTrigger>
-              <DialogContent className="max-w-2xl border-[3px] border-border data-[aesthetic=pixel]:[box-shadow:6px_6px_0px_0px_var(--border)]" style={{ borderRadius: 0 }}>
+              <DialogContent className="max-w-2xl border-[3px] border-border" style={{ borderRadius: 0, boxShadow: 'var(--shadow)' }}>
                 <DialogHeader>
                   <DialogTitle className="text-2xl font-semibold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                     {item.title}

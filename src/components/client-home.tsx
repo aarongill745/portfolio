@@ -1,7 +1,6 @@
 'use client'
 
 import { ThemeSwitcher } from '@/components/theme-switcher'
-import { AestheticSwitcher } from '@/components/aesthetic-switcher'
 import { HeroSection } from '@/components/hero-section'
 import { IntroSection } from '@/components/intro-section'
 import { useTheme } from 'next-themes'
@@ -66,7 +65,6 @@ export default function ClientHome({ children }: ClientHomeProps) {
         <div className="w-full max-w-2xl lg:max-w-3xl">
           <div>
             <div className='flex justify-end gap-4 pb-4'>
-              <AestheticSwitcher/>
               <ThemeSwitcher/>
             </div>
             <div className="font-pixel">

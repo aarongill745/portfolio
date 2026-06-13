@@ -2,7 +2,6 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getPostBySlug, getAllPosts, formatDate } from '@/lib/blog'
 import { ThemeSwitcher } from '@/components/theme-switcher'
-import { AestheticSwitcher } from '@/components/aesthetic-switcher'
 import { MarkdownContent } from '@/components/markdown-content'
 
 interface BlogPostPageProps {
@@ -59,7 +58,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               ← BACK TO BLOG
             </Link>
             <div className="flex gap-4">
-              <AestheticSwitcher />
               <ThemeSwitcher />
             </div>
           </div>

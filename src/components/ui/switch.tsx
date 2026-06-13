@@ -13,7 +13,7 @@ const Switch = React.forwardRef<
     className={cn(
       // Base structure
       'peer inline-flex h-8 w-14 shrink-0 cursor-pointer items-center',
-      // Neobrutalism borders
+      // Pixel borders
       'border-4 border-border',
       // Background colors (changes with checked state)
       'bg-background data-[state=checked]:bg-foreground',
