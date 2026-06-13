@@ -18,7 +18,7 @@ export function ThemeSwitcher() {
   if (!mounted) {
     return (
       <button
-        className="pixel-button text-xs sm:text-sm flex items-center gap-2"
+        className="pixel-button flex items-center gap-2 text-xs sm:text-sm"
         disabled
       >
         <Sun size={16} />
@@ -30,11 +30,15 @@ export function ThemeSwitcher() {
   return (
     <button
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-      className="pixel-button text-xs sm:text-sm flex items-center gap-2"
-      aria-label="Toggle theme"
+      className="pixel-button flex items-center gap-2 text-xs sm:text-sm"
+      aria-label={
+        theme === 'light'
+          ? 'Make the site a little dimmer'
+          : 'Make the site a little brighter'
+      }
     >
       {theme === 'light' ? <Sun size={16} /> : <Moon size={16} />}
-      <span>{theme === 'light' ? 'DARK MODE' : 'LIGHT MODE'}</span>
+      <span>{theme === 'light' ? 'A LITTLE DIMMER' : 'A LITTLE BRIGHTER'}</span>
     </button>
   )
 }

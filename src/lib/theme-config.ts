@@ -135,35 +135,38 @@ const pixelLight: ThemeTokens = {
 
 /**
  * Pixel Dark Theme
+ *
+ * This is intentionally closer to light mode than a true dark palette:
+ * a dim, sunset-leaning paper surface with muted accents for easier reading.
  */
 const pixelDark: ThemeTokens = {
   colors: {
-    background: '#090a12',
-    secondaryBackground: '#151622',
-    foreground: '#f2f0ff',
-    mainForeground: '#05060d',
-    main: '#58f5ff',
-    accent: '#d64cff',
-    border: '#38415f',
-    ring: '#58f5ff',
-    overlay: 'rgba(9, 10, 18, 0.9)',
-    timelineConnector: '#38415f',
-    timelineBorder: '#58f5ff',
-    companyTitle: '#f4c95d',
-    skillBg: '#211b35',
-    skillText: '#58f5ff',
-    skillBorder: '#d64cff',
-    grid: 'rgba(88, 245, 255, 0.08)',
+    background: '#ead8d0',
+    secondaryBackground: '#f3e5dc',
+    foreground: '#2d2130',
+    mainForeground: '#1f1824',
+    main: '#c9822d',
+    accent: '#b84d66',
+    border: '#4a3547',
+    ring: '#c9822d',
+    overlay: 'rgba(234, 216, 208, 0.92)',
+    timelineConnector: '#9a7a86',
+    timelineBorder: '#4a3547',
+    companyTitle: '#855c6c',
+    skillBg: '#c9822d',
+    skillText: '#1f1824',
+    skillBorder: '#4a3547',
+    grid: 'rgba(74, 53, 71, 0.11)',
 
-    // Neo-noir pixel colors
-    pixelGold: '#f4c95d',
-    pixelPurple: '#8d5cff',
-    pixelCyan: '#58f5ff',
-    pixelPink: '#d64cff',
-    pixelOrange: '#ff8a3d',
-    pixelYellow: '#f4c95d',
-    pixelRed: '#ff4f6d',
-    pixelBlue: '#4f7dff',
+    // Muted sunset pixel colors
+    pixelGold: '#c9822d',
+    pixelPurple: '#7f527d',
+    pixelCyan: '#2a8791',
+    pixelPink: '#b84d66',
+    pixelOrange: '#c65f36',
+    pixelYellow: '#d6a84a',
+    pixelRed: '#b84837',
+    pixelBlue: '#5c5a9d',
   },
   spacing: {
     borderWidth: '2px',
@@ -199,7 +202,10 @@ export const themes = {
 /**
  * Get theme configuration for a specific mode and color scheme
  */
-export function getThemeConfig(mode: ThemeMode, colorScheme: ColorScheme): ThemeTokens {
+export function getThemeConfig(
+  mode: ThemeMode,
+  colorScheme: ColorScheme,
+): ThemeTokens {
   return themes[mode][colorScheme]
 }
 

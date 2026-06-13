@@ -2,6 +2,8 @@
 
 This portfolio uses one visual style: the retro pixel theme. The only supported color schemes are light and dark.
 
+Dark mode is a dim-light scheme rather than a true dark or neon palette. It should stay visually close to light mode, using less bright sunset-leaning colors and softer surfaces for readability.
+
 ## Source Files
 
 - `src/lib/theme-config.ts` defines the pixel light and pixel dark token sets.

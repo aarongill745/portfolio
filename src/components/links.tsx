@@ -23,14 +23,14 @@ export default function Links() {
   ]
 
   return (
-    <div className="links-container mr-auto mt-6 flex w-full flex-wrap items-center gap-6">
+    <div className="links-container mt-6 mr-auto flex w-full flex-wrap items-center gap-6">
       {links.map((link, id) => {
         return (
           <a
             target="_blank"
             key={id}
             href={link.href}
-            className="pixel-border bg-pixel-blue hover:bg-white dark:hover:bg-purple-400 p-3 transition-colors duration-100 flex items-center gap-2"
+            className="pixel-border bg-pixel-blue dark:hover:bg-secondary-background flex items-center gap-2 p-3 transition-colors duration-100 hover:bg-white"
           >
             <link.icon size={16} className="text-main-foreground" />
             <span className="text-main-foreground text-sm uppercase">
@@ -45,13 +45,12 @@ export default function Links() {
         target="_blank"
         href={RESUME.path}
         rel="noopener noreferrer"
-        className="pixel-border bg-pixel-blue hover:bg-white dark:hover:bg-purple-400 p-3 transition-colors duration-100 flex items-center gap-2"
+        className="pixel-border bg-pixel-blue dark:hover:bg-secondary-background flex items-center gap-2 p-3 transition-colors duration-100 hover:bg-white"
         aria-label="View Resume"
       >
         <FileText size={16} className="text-main-foreground" />
         <span className="text-main-foreground text-sm uppercase">Resume</span>
       </a>
-      
     </div>
   )
 }

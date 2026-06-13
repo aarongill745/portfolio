@@ -3,8 +3,8 @@
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
-import lightSky from '@/images/backgrounds/light/sky.png'
 import darkSky from '@/images/backgrounds/dark/sky.png'
+import lightSky from '@/images/backgrounds/light/sky.png'
 
 export function HeroSection() {
   const { resolvedTheme } = useTheme()
@@ -14,25 +14,25 @@ export function HeroSection() {
     setMounted(true)
   }, [])
 
-  const skyBg = resolvedTheme === 'dark' ? darkSky.src : lightSky.src
+  const skyBg = mounted && resolvedTheme === 'dark' ? darkSky.src : lightSky.src
 
   return (
     <div
-      className="hero-section pixel-border p-6 mb-8 bg-cover bg-center transition-all"
+      className="hero-section pixel-border mb-8 bg-cover bg-center p-6 transition-all"
       style={{
-        backgroundImage: mounted ? `url(${skyBg})` : `url(${lightSky.src})`,
+        backgroundImage: `url(${skyBg})`,
       }}
       suppressHydrationWarning
     >
-      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+      <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
         <div className="flex-1">
-          <h1 className="text-2xl sm:text-4xl text-main mb-4 font-bold tracking-tight">
+          <h1 className="text-main mb-4 text-2xl font-bold tracking-tight sm:text-4xl">
             AARON GILL
           </h1>
-          <p className="text-base sm:text-lg text-blue-900 dark:text-rose-900 font-semibold">
+          <p className="text-base font-semibold text-blue-900 sm:text-lg dark:text-rose-950">
             SOFTWARE ENGINEER
           </p>
-          <p className="text-xs pt-2 font-medium text-foreground">
+          <p className="text-foreground pt-2 text-xs font-medium">
             and Sesame Street enthusiast...
           </p>
         </div>
