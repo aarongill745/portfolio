@@ -5,10 +5,8 @@ import { HeroSection } from '@/components/hero-section'
 import { IntroSection } from '@/components/intro-section'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
-import { type BlogPost } from '@/lib/blog'
 
 interface ClientHomeProps {
-  featuredPosts: BlogPost[]
   children: React.ReactNode
 }
 

@@ -182,10 +182,6 @@ body {
   font-family: var(--font-pixel), 'Courier New', monospace;
 }
 
-.font-blog {
-  font-family: var(--font-blog), system-ui, -apple-system, sans-serif;
-}
-
 .font-content {
   font-family: var(--font-content), system-ui, -apple-system, sans-serif;
 }
