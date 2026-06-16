@@ -45,7 +45,7 @@ export function IntroSection() {
           HEY! I&apos;M AARON GILL, A SOFTWARE ENGINEER BASED IN SYDNEY,
           AUSTRALIA
         </p>
-        <p>WELCOME TO MY PORTFOLIO SITE</p>
+        <p>WELCOME TO MY SITE</p>
       </div>
       <Links />
     </div>

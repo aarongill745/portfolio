@@ -1,16 +1,17 @@
 export default function AboutMe() {
   return (
     <div className="mb-2">
-      <h2 className="mb-6 text-2xl sm:text-3xl font-bold tracking-tighter">About Me</h2>
-      <div className="space-y-4 text-base sm:text-lg leading-relaxed">
+      <h2 className="mb-6 text-2xl font-bold tracking-tighter sm:text-3xl">
+        About Me
+      </h2>
+      <div className="space-y-4 text-base leading-relaxed sm:text-lg">
         <p>
-          I&apos;m a full stack developer based on Sydney, Australia with an interest in low level programming and performance.
+          I&apos;m a full stack developer based in Sydney, Australia with an
+          interest in all things backend, especially event driven systems.
         </p>
+        <p>I spend a lot of time trying different types of coffee.</p>
         <p>
-          A lot of my time is spent experimenting and trying to learn new things. Right now that would be Go, and hopefully Rust in the near future.
-        </p>
-        <p>
-          Feel free to reach out to me (links above) anytime.
+          Feel free to reach out to me (links above) anytime about anything.
         </p>
       </div>
     </div>
