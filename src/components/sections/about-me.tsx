@@ -7,9 +7,12 @@ export default function AboutMe() {
       <div className="space-y-4 text-base leading-relaxed sm:text-lg">
         <p>
           I&apos;m a full stack developer based in Sydney, Australia with an
-          interest in all things backend, especially event driven systems.
+          interest in all things backend. Having a lot of fun with event driven
+          systems at the moment.
         </p>
-        <p>I spend a lot of time trying different types of coffee.</p>
+        <p>
+          I also spend a lot of time trying different types of coffee beans.
+        </p>
         <p>
           Feel free to reach out to me (links above) anytime about anything.
         </p>
