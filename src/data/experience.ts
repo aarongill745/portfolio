@@ -11,7 +11,7 @@ const PAST_ROLES: {
     company: 'Commonwealth Bank of Australia',
     role: 'Software Engineer - Companion',
     description:
-      'Working on real time monitoring and evaluations for AI agents, distributed systems and event driven architectures.',
+      'Working on real time monitoring and evaluations for AI agents',
     startDate: 'Aug 2025',
     endDate: 'Current',
     companyColor: 'var(--pixel-yellow)',
@@ -21,7 +21,7 @@ const PAST_ROLES: {
     company: 'Commonwealth Bank of Australia',
     role: 'Technology Graduate - Engineering',
     description:
-      '3 rotations in a grad program, worked on all kinds of projects for wildly different use cases.',
+      '3 rotations in a grad program, worked on all kinds of projects',
     startDate: 'Feb 2024',
     endDate: 'Aug 2025',
     companyColor: 'var(--pixel-yellow)',
